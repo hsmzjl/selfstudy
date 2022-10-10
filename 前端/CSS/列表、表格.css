@@ -1,0 +1,266 @@
+/* CSS 列表 */
+
+/* HTML 列表和 CSS 列表属性 */
+/* 在 HTML 中，列表主要有两种类型： */
+
+/* 无序列表（<ul>）- 列表项用的是项目符号标记 */
+/* 有序列表（<ol>）- 列表项用的是数字或字母标记 */
+/* CSS 列表属性使您可以： */
+
+/* 为有序列表设置不同的列表项标记 */
+/* 为无序列表设置不同的列表项标记 */
+/* 将图像设置为列表项标记 */
+/* 为列表和列表项添加背景色 */
+
+/* 不同的列表项目标记 */
+/* list-style-type 属性指定列表项标记的类型。 */
+/* 下例显示了一些可用的列表项标记： */
+
+/* 实例 */
+ul.a {
+  list-style-type: circle;
+}
+ul.b {
+  list-style-type: square;
+}
+ol.c {
+  list-style-type: upper-roman;
+}
+ol.d {
+  list-style-type: lower-alpha;
+}
+/* <ul class="a">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+<ul class="b">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+
+<p>有序列表实例：</p>
+<ol class="c">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol>
+<ol class="d">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol> */
+
+
+/* 图像作为列表项标记 */
+/* list-style-image 属性将图像指定为列表项标记： */
+/* 实例 */
+ul {
+  list-style-image: url('sqpurple.gif');
+}
+
+/* 定位列表项标记 */
+/* list-style-position 属性指定列表项标记（项目符号）的位置。 */
+/* "list-style-position: outside;" 表示项目符号点将在列表项之外。列表项每行的开头将垂直对齐。这是默认的： */
+/* Coffee - 用烘焙过的咖啡豆制成的冲泡饮料 */
+/* Tea */
+/* Coca-cola */
+/* "list-style-position: inside;" 表示项目符号将在列表项内。由于它是列表项的一部分，因此它将成为文本的一部分，并在开头推开文本： */
+
+/* Coffee - 用烘焙过的咖啡豆制成的冲泡饮料 */
+/* Tea */
+/* Coca-cola */
+/* 实例 */
+ul.a {
+  list-style-position: outside;
+}
+ul.b {
+  list-style-position: inside;
+}
+
+/* 删除默认设置 */
+/* list-style-type:none 属性也可以用于删除标记/项目符号。请注意，列表还拥有默认的外边距和内边距。要删除此内容，请在 <ul> 或 <ol> 中添加 margin:0 和 padding:0 ： */
+/* 实例 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 列表 - 简写属性 */
+/* list-style 属性是一种简写属性。它用于在一条声明中设置所有列表属性： */
+/* 实例 */
+ul {
+  list-style: square inside url("sqpurple.gif");
+}
+
+/* 在使用简写属性时，属性值的顺序为： */
+/* list-style-type（如果指定了 list-style-image，那么在由于某种原因而无法显示图像时，会显示这个属性的值） */
+/* list-style-position（指定列表项标记应显示在内容流的内部还是外部） */
+/* list-style-image（将图像指定为列表项标记） */
+/* 如果缺少上述属性值之一，则将插入缺失属性的默认值（如果有）。 */
+
+/* 设置列表的颜色样式 */
+/* 我们还可以使用颜色设置列表样式，使它们看起来更有趣。 */
+/* 添加到 <ol> 或 <ul> 标记的任何样式都会影响整个列表，而添加到 <li> 标记的属性将影响各个列表项： */
+/* 实例 */
+ol {
+  background: #ff9999;
+  padding: 20px;
+}
+ul {
+  background: #3399ff;
+  padding: 20px;
+}
+ol li {
+  background: #ffe5e5;
+  padding: 5px;
+  margin-left: 35px;
+}
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+}
+
+
+
+/* CSS 表格 */
+/* 表格边框 */
+/* 如需在 CSS 中设置表格边框，请使用 border 属性。 */
+/* 下例为 <table>、<th> 和 <td> 元素规定了黑色边框： */
+/* 实例 */
+table, th, td {
+  border: 1px solid black;
+}
+/* 注意：上例中的表格拥有双边框。这是因为 table 和 <th> 和 <td> 元素都有单独的边框。 */
+
+/* 全宽表格 */
+/* 在某些情况下，上表似乎很小。如果您需要一个可以覆盖整个屏幕（全宽）的表格，请为 <table> 元素添加 width: 100%： */
+/* 实例 */
+table {
+  width: 100%;
+}
+
+/* 双边框 */
+/* 请注意上面的表格有双边框。这是因为表格和 th、td 元素都有单独的边框。 */
+
+/* 如需删除双边框，请看下面的例子。 */
+
+/* 合并表格边框 */
+/* border-collapse 属性设置是否将表格边框折叠为单一边框： */
+
+/* 实例 */
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+/* 如果只希望表格周围有边框，则仅需为 <table> 指定 border 属性： */
+/* 实例 */
+table {
+  border: 1px solid black;
+}
+
+
+/* 表格宽度和高度 */
+/* 表格的宽度和高度由 width 和 height 属性定义。 */
+/* 下例将表的宽度设置为 100％，将 <th> 元素的高度设置为 50px： */
+/* 实例 */
+table {
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+/* 要创建仅占页面一半的表，请使用 width: 50%： */
+/* 实例 */
+table {
+  width: 50%;
+}
+
+th {
+  height: 70px;
+}
+
+
+/* 水平对齐 */
+/* text-align 属性设置 <th> 或 <td> 中内容的水平对齐方式（左、右或居中）。 */
+/* 默认情况下，<th> 元素的内容居中对齐，而 <td> 元素的内容左对齐。 */
+/* 要使 <td> 元素的内容也居中对齐，请使用 text-align: center： */
+/* 实例 */
+th {
+  text-align: center;
+}
+
+/* 下例使 <th> 元素中的文本左对齐： */
+/* 实例 */
+th {
+  text-align: left;
+}
+
+/* 垂直对齐 */
+/* vertical-align 属性设置 <th> 或 <td> 中内容的垂直对齐方式（上、下或居中）。 */
+/* 默认情况下，表中内容的垂直对齐是居中（<th> 和 <td> 元素都是）。 */
+/* 下例将 <td> 元素的垂直文本对齐方式设置为下对齐： */
+/* 实例 */
+td {
+  height: 50px;
+  vertical-align: bottom;
+}
+
+/* 表格内边距 */
+/* 如需控制边框和表格内容之间的间距，请在 <td> 和 <th> 元素上使用 padding 属性： */
+/* 实例 */
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+/* 可悬停表格 */
+/* 在 <tr> 元素上使用 :hover 选择器，以突出显示鼠标悬停时的表格行： */
+/* 实例 */
+tr:hover {background-color: #f5f5f5;}
+
+/* 条状表格 */
+/* 为了实现斑马纹表格效果，请使用 nth-child() 选择器，并为所有偶数（或奇数）表行添加 background-color： */
+/* 实例 */
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+/* 表格颜色 */
+/* 下例指定了 <th> 元素的背景颜色和文本颜色： */
+/* 实例 */
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* 响应式表格 */
+/* 如果屏幕太小而无法显示全部内容，则响应式表格会显示水平滚动条： */
+/* 在 <table> 元素周围添加带有 overflow-x:auto 的容器元素（例如 <div>），以实现响应式效果： */
+/* 实例 */
+/* <div style="overflow-x:auto;">
+
+<table>
+... table content ...
+</table>
+
+</div> */
+/* 注释：在 OS X Lion（在 Mac 上）中，滚动条默认情况下是隐藏的，并且仅在使用时显示（即使设置了 "overflow:scroll"）。 */
+
+
+
+
+
+
+
+
+
+
+
+

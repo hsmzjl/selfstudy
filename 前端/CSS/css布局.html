@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* flex布局 */
+        /* 盒子模型 */
+        .boxsizing {
+            /* 正常盒子模型  padding border 盒子会变大，向外扩展*/
+            box-sizing: content-box;
+        }
+
+        .boxsizing1 {
+            /* 盒子模型  padding border 盒子不会变大，向内扩展*/
+            box-sizing: border-box;
+        }
+
+        .flexbox {
+            /* flex布局 */
+
+            /* 父级元素使用flex  如果使用了弹性布局，子元素不能浮动 float */
+            display: flex;
+            /* 父级元素上的属性 */
+            justify-content: center;
+            /*子元素水平排列方式    居中  */
+            justify-content: space-between;
+            /*子元素水平排列方式    两端对齐  */
+            justify-content: space-around;
+            /*子元素水平排列方式    拉手分布  */
+            justify-content: flex-start;
+            /*子元素水平排列方式    居左  */
+            justify-content: flex-end;
+            /*子元素水平排列方式    居右  */
+            align-items: center;
+            /*子元素垂直排列方式    居中  */
+            align-items: flex-start;
+            /*子元素垂直排列方式    开始  */
+            align-items: flex-end;
+            /*子元素垂直排列方式    底部  */
+            align-content: center;
+            /*多行的时候垂直排列    居中  */
+            flex-direction: row;
+            /*x轴方向    横向正向  */
+            flex-direction: column;
+            /*x轴方向    纵向正向  */
+            flex-direction: row-reverse;
+            /*x轴方向    横向反向  */
+            flex-direction: column-reverse;
+            /*x轴方向    纵向反向  */
+        }
+
+        .flexchildbox {
+            flex: 1;
+            /*子元素所占比例系数，先刨除固定宽度 */
+            flex-grow: 1;
+            /*定义子元素放大比例 */
+            order: 0;
+            /*规定子元素顺序，数值越小越靠前 */
+        }
+
+        .dingwei {
+            /* 定位 */
+
+            /* 正常定位 默认值，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明） */
+            position: static;
+            /* 相对定位，不脱离文档流，原有位置保留 */
+            position: relative;
+            /* 绝对定位，相对于第一个有定位的父级元素定位，如果所有祖先元素都没有定位，这相对文档定位，
+            通常我们会给需要绝对定位的元素的父元素加上相对定位，脱离文档流，原有位置不保留
+            元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。 */
+            position: absolute;
+            /* 绝对定位，相对于浏览器窗口进行定位，元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。 */
+            position: fixed;
+        }
+
+        .inlineblock {
+            /* 行内元素和块级元素 */
+            /* 元素嵌套
+            行级元素只能嵌套行级元素
+            块级元素可以嵌套任何元素
+            例外：p标签不能套块级元素，a标签不能套a标签 */
+
+            /* 行内元素，在一行内显示,不能设置宽高，默认的宽高为文本内容占据的宽高 a span em strong label */
+            display: inline;
+            /* 块级元素，独占一行，可以设置宽高，如果不设置宽度，默认是100%父级元素宽度 div ul ol p h table from */
+            display: block;
+            /* 行内块元素，在一行内显示，可以设置宽高 input img */
+            display: inline-block;
+        }
+
+        .changyongcss {
+            /* 常用CSS */
+
+            width: 100px;
+            /* 宽 */
+            height: 100px;
+            /* 高 */
+            line-height: 100px;
+            /* 行高 当行高等于高时，字体垂直居中*/
+            font-size: 20px;
+            /* 字体的高 */
+            text-indent: 2em;
+            /* 文本缩进 */
+            color: lawngreen;
+            /* 文本颜色 */
+            background-color: lemonchiffon;
+            /* 背景颜色 */
+            font-weight: normal;
+            /*normal 默认值。定义标准的字符。 bold 定义粗体字符。 lighter 定义更细的字符。 100 200 300 400 500 600 700 800 900定义由粗到细的字符。400 等同于 normal，而 700 等同于 bold。 */
+            font-family: arial;
+            /*字体*/
+            font-style: italic;
+            /*字体风格*/
+            border: 10px solid black;
+            /* 可拆分为  */
+            border-width: 10px;
+            border-style: solid;
+            border-color: black;
+            border-left-color: black;
+            border-top-color: transparent;
+            /*透明色*/
+            /* 文本对齐方式 center left right */
+            text-align: center;
+        }
+
+        .wenziyichu {
+            /* 文字溢出处理 */
+
+            width: 100px;
+            white-space: nowrap;
+            /*不换行 */
+            overflow: hidden;
+            /*溢出部分不显示*/
+            text-overflow: ellipsis;
+            /*用...替换溢出部分*/
+        }
+
+        .backgroundimg {
+            /* 背景图 */
+
+            background-image: url(fy.jpg);
+            /*引入背景图*/
+            background-size: 100px 100px;
+            /*背景图片大小*/
+            background-repeat: no-repeat;
+            /*是否重复出现*/
+            background-position: 50px 50px;
+            /*背景图定位 可取值（50% center top left 等!）*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxsizing"></div>
+    <div class="boxsizing1"></div>
+    <div class="flexbox">
+        <div class="flexchildbox"></div>
+    </div>
+    <div class="dingwei"></div>
+    <div class="inlineblock"></div>
+    <div class="changyongcss"></div>
+    <p class="wenziyichu"></p>
+    <div class="backgroundimg"></div>
+
+</body>
+
+</html>

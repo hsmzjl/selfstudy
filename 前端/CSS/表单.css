@@ -1,0 +1,101 @@
+/* CSS 表单 */
+
+/* 设置输入字段的样式 */
+/* 使用 width 属性来确定输入字段的宽度： */
+/* First Name  */
+/* 实例 */
+input {
+  width: 100%;
+}
+
+/* 上例适用于所有 <input> 元素。如果只想设置特定输入类型的样式，则可以使用属性选择器： */
+
+/* input[type=text] - 将仅选择文本字段 */
+/* input[type=password] - 将仅选择密码字段 */
+/* input[type=number] - 将仅选择数字字段 */
+/* 等等... */
+
+/* 请注意，我们已将 box-sizing 属性设置为 border-box。这样可以确保元素的总宽度和高度中包括内边距（填充）和最终的边框。 */
+
+
+
+/* 设置输入按钮的样式 */
+/* 实例 */
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* 提示：请使用  width: 100%，以实现全宽按钮 */
+
+
+/* 彩色的输入框 */
+/* 请使用 background-color 属性为输入添加背景色，并使用 color 属性更改文本颜色： */
+/* 实例 */
+input[type=text] {
+  background-color: #3CBC8D;
+  color: white;
+}
+
+
+/* 获得焦点的输入框 */
+/* 默认情况下，某些浏览器在获得焦点（单击）时会在输入框周围添加蓝色轮廓。您可以通过向输入添加 outline: none; 来消除此行为。 */
+/* 使用 :focus 选择器可以在输入字段获得焦点时为其设置样式： */
+/* 实例 1 */
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+
+/* 带有图标/图像的输入框 */
+/* 如果希望在输入框中包含图标，请使用 background-image 属性，并将其与 background-position 属性一起设置。还要注意，我们添加了一个较大的左内边距（padding-left）来留出图标的空间： */
+/* 实例 */
+input[type=text] {
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+
+/* 带动画效果的搜索输入框 */
+/* 在本例中，我们使用 CSS transition 属性为搜索输入框获得焦点时的宽度变化设置动画。 */
+/* 实例 */
+input[type=text] {
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+/* https://www.w3school.com.cn/css/css3_text_effects.asp */
+/* CSS 文本效果 */
+
+/* CSS 文本溢出、整字换行、换行规则以及书写模式 */
+/* 在本章中，您将学习如下属性： */
+text-overflow
+word-wrap
+word-break
+writing-mode
+
+/* CSS 文字溢出 */
+/* CSS text-overflow 属性规定应如何向用户呈现未显示的溢出内容。 */
+/* 可以被裁剪： */
+/* CSS 代码如下： */
+/* 实例 */
+p.test1 {
+  white-space: nowrap; 
+  width: 200px; 
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: clip; 
+}
+p.test2 {
+  white-space: nowrap; 
+  width: 200px; 
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+/* 下面的例子展示了将鼠标悬停在元素上时如何显示溢出的内容： */
+/* 实例 */
+div.test:hover {
+  overflow: visible;
+}
+
+/* CSS 字换行（Word Wrapping） */
+/* CSS word-wrap 属性使长文字能够被折断并换到下一行。 */
+/* 如果一个单词太长而无法容纳在一个区域内，它会向外扩展： */
+/* 通过 word-wrap 属性，您可以强制对文本进行换行 - 即使这意味着在词中间将其拆分： */
+/* CSS 代码如下： */
+/* 实例 */
+/* 允许长单词被打断并换行到下一行： */
+p {
+  word-wrap: break-word;
+}
+
+/* CSS 换行规则 */
+/* CSS word-break 属性指定换行规则。 */
+/* 本段包含一些文本。此行将连字符打断： */
+/* 本段包含一些文本。这些行将在任何字符处中断： */
+/* CSS 代码如下： */
+/* 实例 */
+p.test1 {
+  word-break: keep-all;
+}
+p.test2 {
+  word-break: break-all;
+}
+
+
+/* CSS 书写模式 */
+/* CSS writing-mode 属性规定文本行是水平放置还是垂直放置。 */
+/* 下面的例子展示了一些不同的书写模式： */
+/* 实例 */
+p.test1 {
+  writing-mode: horizontal-tb; 
+}
+span.test2 {
+  writing-mode: vertical-rl; 
+}
+p.test2 {
+  writing-mode: vertical-rl; 
+}
+
+
+/* CSS 文本效果属性 */
+/* 下表列出了 CSS 文本效果属性： */
+/* 属性	                 描述 */
+/* text-align-last	    指定如何对齐文本的最后一行。 */
+/* text-justify	        指定对齐的文本应如何对齐和间隔。 */
+/* text-overflow	    指定应如何向用户呈现未显示的溢出内容。 */
+/* word-break	        指定非 CJK 脚本的换行规则。 */
+/* word-wrap	        允许长单词被打断并换到下一行。 */
+/* writing-mode	        指定文本行是水平放置还是垂直放置。 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

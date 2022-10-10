@@ -1,0 +1,143 @@
+一、简介
+Electron是由Github开发，基于Chromium和Node.js，使用JavaScript，HTML 和 CSS 等 Web技术创建跨平台原生桌面应用的框架。
+
+兼容Mac，Window和Linux，它构建的应用可在这三个操作系统上面运行，借助Electron，我们可以使用纯JavaScript来调用丰富的原生APIs。
+
+二、市场
+现在已经有很多由Electron开发应用，比如Atom、Insomnia、Visual Studio Code等。查看更多使用Electron构建的项目可以访问 Apps Built on Electron
+
+三、安装
+Electron的开发需要安装Node.js，npm和electron。下面我们一步一步的进行环境安装
+
+1、安装node版本
+node中文官网 https://nodejs.org/zh-cn/
+首先到node官网下载对于的操作系统版本，然后进行傻瓜式安装，执行如下命令，如果不报错，则说明安装没有问题。
+安装node时，npm默认会安装
+使用如下命令，查看是否安装成功
+node -v
+npm -v
+
+2、安装国内的npm包管理器
+npm  install  -g cnpm --registry=https://registry.npm.taobao.org
+
+3、安装electron
+cnpm install  -g  electron
+
+4、验证electron否安装成功
+electron -v
+
+5、安装Electron-forge
+Electron-forge到底是个什么东西呢?  类似于c++的MinGW, 或者像PHP的某些lib, 或者像是Composer, 让程序员通过简单的命令傻瓜式安装/引入复杂的依赖库。
+cnpm install -g electron-forge
+
+
+
+
+
+
+// 安装VUE脚手架
+npm install -g vue-cli
+// 初始化项目
+vue init simulatedgreg/electron-vue my-project
+// 进入项目
+cd my-project
+
+
+
+electron 如何实现跨域请求。
+mainWindow = new BrowserWindow({
+    webPreferences: {webSecurity: false},   //在Electron的BrowserWindow模块中配置这样一个参数：
+  })
+webSecurity是什么意思呢？顾名思义，他是设置web安全性，如果参数设置为 false，它将禁用相同地方的规则 (通常测试服), 并且如果有2个非用户设置的参数，就设置 allowDisplayingInsecureContent 和 allowRunningInsecureContent的值为true。 （webSecurity的默认值为true）
+allowDisplayingInsecureContent表示是否允许一个使用 https的界面来展示由 http URLs 传过来的资源。默认false。
+allowRunningInsecureContent表示是否允许一个使用 https的界面来渲染由 http URLs 提交的html，css，javascript。默认为 false。
+
+
+
+
+按照package.json配置安装依赖 
+npm  install 
+
+
+
+
+打包win32应用程序
+在package.json文件中配置win32打包。添加如下代码：
+"build:win32": "node .electron-vue/build.js && electron-builder  --platform=win32 --arch=ia32",
+
+
+
+
+开发状态与打包后的资源文件路径不相同 
+可以用 
+const __staticpath = process.env.NODE_ENV === 'development'
+    ? path.join(__dirname, '../../static')
+    : path.join(__dirname, '../../../static')
+来分别设置开发状态可正式运行时的静态文件路径
+
+
+
+修改监听端口号
+.electron-vue/dev-runner.js中找到  server.listen(9081)
+修改9081至你想要的端口号
+同时修改src/main/index.js中
+const winURL = process.env.NODE_ENV === 'development'
+  ? `http://localhost:端口号`
+  : `file://${__dirname}/index.html`
+的端口号
+
+
+设置系统托盘图标 
+var { Menu, Tray, BrowserWindow, app } = require('electron');
+var path = require('path');
+const __staticpath = process.env.NODE_ENV === 'development'
+    ? path.join(__dirname, '../../static')
+    : path.join(__dirname, '../../../static')
+var iconTray = new Tray(path.join(__staticpath, 'favicon2.ico'));
+//绑定右键菜单
+var trayMenu = Menu.buildFromTemplate([
+    {
+        label: '退出',
+        click: function () {
+            if (process.platform !== 'darwin') {
+                app.quit();
+            }
+        }
+    }
+]);
+iconTray.setContextMenu(trayMenu);
+iconTray.setToolTip('HSM');
+//实现点击关闭按钮让应用保存在托盘里面 ，双击托盘打开应用
+var win = BrowserWindow.getFocusedWindow();
+win.on('close', (e) => {
+    if (!win.isFocused()) {
+        win = null;
+    } else {
+        e.preventDefault();  //阻止窗口的关闭事件
+        win.hide();
+    }
+})
+//监听任务栏图标的点击事件
+iconTray.on('double-click', function () {
+    win.show();
+})
+//闪烁图标
+// var count = 0;
+// var timer = setInterval(function () {
+//     count++;
+//     if (count % 2 == 0) {
+//         iconTray.setImage(path.join(__staticpath, 'favicon2.ico'))
+//     } else {
+//         iconTray.setImage(path.join(__staticpath, 'empty.ico'))
+//     }
+// }, 500)
+
+
+
+
+
+??????? vuex
+???????
+
+
+流程

@@ -1,0 +1,23 @@
+https://www.cnblogs.com/plBlog/p/13867858.html
+https://www.electronjs.org/docs/latest/api/app#apprequestsingleinstancelock
+
+// 单例模式
+import { app } from 'electron'
+let win
+const gotTheLock = app.requestSingleInstanceLock()
+if (!gotTheLock) {
+  app.quit()
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    // 当运行第二个实例时,将会聚焦到myWindow这个窗口
+    if (win) {
+      win.show()
+      if (win.isMinimized()) win.restore()
+      win.focus()
+    }
+  })
+  // 创建 myWindow, 加载应用的其余部分, etc...
+  app.on('ready', () => {
+    createWindow()
+  })
+}

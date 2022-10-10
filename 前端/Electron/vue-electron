@@ -1,0 +1,303 @@
+https://gitee.com/yuyang0760/vue_electron/blob/master/%E6%9C%80%E6%96%B0%E7%89%88electron%20vue%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85
+
+使用vue-cli 脚手架安装 electron
+
+已有环境，安装好了 node.js,cnpm,yarn
+1、安装或升级vue/cli 脚手架
+npm install @vue/cli -g 或npm update @vue/cli -g
+
+2、创建vue项目
+vue create appname 
+选择自定义安装 Manually select features
+出现列表
+Babel 必选 
+Router 路由   要选
+Vuex 要选
+CSS Pre-processors 要选  css预编译 比如scss
+Linter / Formatter 格式检查，一般可不选
+
+选择css预编译工具时 有dart-sass和node-sass 选dart-sass 因为node-sass下载不下来
+
+? Please pick a preset: Manually select features
+? Check the features needed for your project: Choose Vue version, Babel, Router, Vuex, CSS Pre-processors
+? Choose a version of Vue.js that you want to start the project with 2.x
+? Use history mode for router? (Requires proper server setup for index fallback in production) Yes
+? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default): Sass/SCSS (with dart-sass)
+? Where do you prefer placing config for Babel, ESLint, etc.? In package.json
+? Save this as a preset for future projects? Yes
+? Save preset as:
+
+3、用vue命令安装electron
+cd appname       //先要切换到项目目录内
+vue add electron-builder
+
+4、安装依赖包
+yarn
+
+5、启动app
+yarn run electron:serve
+
+6、app打包
+yarn run electron:build
+
+
+7、用vue add 安装element-ui
+vue add element
+? How do you want to import Element? Fully import
+? Do you wish to overwrite Element's SCSS variables? (y/N) y
+'
+
+如果发生错误一定要删除文件夹重新来过，不然可能有未知错误
+
+
+
+
+# 一些常用设置
+修改background.js：
+
+mainWindow = new BrowserWindow({
+    height: 800,
+    useContentSize: true,
+    width: 1700,
+    minWidth: 1366,
+    show: false,
+    frame: config.IsUseSysTitle,
+    webPreferences: {
+        contextIsolation: false,
+        nodeIntegration: true,
+        webSecurity: false,      #取消跨域限制
+        // 如果是开发模式可以使用devTools
+        devTools: process.env.NODE_ENV === 'development',
+        // devTools: true,
+        // 在macos中启用橡皮动画
+        scrollBounce: process.platform === 'darwin',
+        enableRemoteModule: true
+    }
+})
+
+
+
+# 设置APP窗口图标
+准备windows和macOS两版图标。
+windows: app.ico 最小尺寸：256x256 
+macOS: app.png或app.icns 最小尺寸：512x512 （后续4.1章节用到）
+把图标文件放到public/目录下，项目结构如下：
+|- /dist_electron
+  （略）
+|- /public
+   |- app.icns  <-- 本教程暂时未使用icns
+   |- app.ico
+   |- app.png
+   |- favicon.ico
+   |- index.html
+|- /src
+  （略）
+|- .editorconfig    
+|- .eslintrc.js
+|- .gitignore
+|- babel.config.js
+|- package.json
+|- package-lock.json
+|- README.md
+可以顺便把favicon.ico也修改一下，但是在桌面版APP上是用不到的。如果以后生成纯web项目才会用到。
+
+# 修改background.js，让APP窗口应用图标：
+function createWindow () {
+      // Create the browser window.
+      win = new BrowserWindow({
+        width: 1200,
+        height: 620,
+        webPreferences: {
+          nodeIntegration: true
+        },
++       // eslint-disable-next-line no-undef
++       icon: `${__static}/app.ico`
+      })
+这里的${__static}对应的是public目录
+现在，Windows系统上可以看到开发环境的APP窗口图标已经生效了。
+
+macOS图标请参照4.1章节，并且需要在build后才能生效。
+
+# 设置APP窗口标题栏名称
+方式一
+修改public/index.html:
+我们把electron-vue-demo改为App Demo。
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+M       <title>App Demo</title>
+</head>
+方式二
+修改 vue.config.js
+    chainWebpack: config => {
+        config
+          .plugin('html')
+          .tap(args => {
+            args[0].title= 'demo'  //窗口标题，任务栏标题
+            return args
+          })
+      },
+
+
+
+
+
+
+# 4.3 打包APP
+执行以下命令，可以build工程：
+npm run electron:build
+最终在dist_electron目录下生成build后的产品。
+windows版本
+目录如下：
+/dist_electron
+|- /bundled
+  （略）
+|- /win-unpacked  <-- 绿色版
+  （略）
+|- AppDemo Setup 0.1.0.exe  <-- 安装文件
+|- AppDemo Setup 0.1.0.exe.blockmap
+|- builder-effective-config.yaml
+|- index.js
+这里其实就win-unpacked和AppDemo Setup 0.1.0.exe有用。
+
+
+
+
+# 一些问题
+
+首次启动vue-electron APP时等待很久
+将所有环境都搭建好之后通过 yarn electron:serve 启动APP，出现如下信息：
+INFO  Launching Electron...
+Failed to fetch extension, trying 4 more times
+Failed to fetch extension, trying 3 more times
+Failed to fetch extension, trying 2 more times
+...
+
+这是因为在请求安装vuejs devtools插件。需要kexue上网才能安装成功。如果不能kexue上网也没关系，耐心等待5次请求失败后会自动跳过。
+每次启动的时候都需要等到请求安装vuejs devtools插件，这个等待时间会比较长，可以通过去掉加载vuejs devtools插件代码来实现：
+app.on('ready', async () => {
+  // 去掉这段代码
+  // if (isDevelopment && !process.env.IS_TEST) {
+  //   // Install Vue Devtools
+  //   try {
+  //     await installExtension(VUEJS_DEVTOOLS)
+  //   } catch (e) {
+  //     console.error('Vue Devtools failed to install:', e.toString())
+  //   }
+  // }
+  createWindow()
+})
+
+
+
+; 修改运行端口
+端口号
+修改运行的端口号，需要在 node_modules 中查找 @vue 文件夹，里面有 cli-service 文件夹，找到 lib 文件夹，commands 文件夹，找到 serve.js 文件夹。
+顺序：node_modules -->  @vue -->   cli-service --> lib -->  commands --> serve.js
+const defaults = {
+  host: '0.0.0.0',
+  port: 11463,
+  https: false
+}
+
+
+; 运行或打包时报警告
+DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+本质是Dart Sass语法升级，不兼容 / 
+解决方法
+$ npm install -g sass-migrator
+$ sass-migrator division **/*.scss
+
+
+; 配置文件
+https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE
+vue.config.js 是一个可选的配置文件，如果项目的 (和 package.json 同级的) 根目录中存在这个文件，那么它会被 @vue/cli-service 自动加载。
+通常需要手动建立 vue.config.js 文件 用来进行一下配置，也可以在这个文件中对第三方插件进行配置
+
+配置第三方插件
+module.exports = {
+  pluginOptions: {
+
+  }
+}
+
+; 对electron-builder进行配置,修改 vue.config.js
+我们使用命令 yarn run electron:build 等时，实际上还是在调用 electron-builder 对项目打包
+所以如何配置还要参考 electron-builder 官网
+https://www.electron.build/configuration/configuration
+https://www.php.cn/div-tutorial-411690.html
+下面是我的配置
+vue.config.js
+module.exports = {
+    pluginOptions: {
+        electronBuilder: {
+            nodeIntegration: true, //渲染进程无法引入 require('electron') 时设置
+            builderOptions: {
+                "appId": "zdkkk.cn",
+                "productName": "花生苗", //项目名，也是生成的安装文件名，即demo.exe
+                "copyright": "zdkkk.cn © 2021", //版权信息
+                "directories": {
+                    "output": "./dist_electron" //输出文件路径
+                },
+                "asar": true,
+                "dmg": {
+                    "contents": [{
+                            "x": 410,
+                            "y": 150,
+                            "type": "link",
+                            "path": "/Applications"
+                        },
+                        {
+                            "x": 130,
+                            "y": 150,
+                            "type": "file"
+                        }
+                    ]
+                },
+                "nsis": {
+                    "oneClick": false, // 是否一键安装
+                    "allowElevation": true, // 允许请求提升。 如果为false，则用户必须使用提升的权限重新启动安装程序。
+                    "allowToChangeInstallationDirectory": true, // 允许修改安装目录
+                    "installerIcon": "./public/app.ico", // 安装图标
+                    "uninstallerIcon": "./public/app.ico", //卸载图标
+                    "installerHeaderIcon": "./public/app.ico", // 安装时头部图标
+                    "createDesktopShortcut": true, // 创建桌面图标
+                    "createStartMenuShortcut": true, // 创建开始菜单图标
+                    "shortcutName": "花生苗安装程序", // 图标名称
+                },
+                "win": { //win相关配置
+                    "icon": "./public/app.ico", //图标，当前图标在根目录下，注意这里有两个坑
+                    "target": [{
+                        "target": "nsis", //利用nsis制作安装程序
+                        "arch": [ // 这个意思是打出来32 bit + 64 bit的包，但是要注意：这样打包出来的安装包体积比较大，所以建议直接打32的安装包。
+                            "x64", //64位
+                            "ia32" //32位
+                        ]
+                    }]
+                },
+                "mac": {
+                    "icon": './public/icon.icns'
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

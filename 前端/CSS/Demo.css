@@ -1,0 +1,412 @@
+/* CSS 导航栏 */
+
+/* https://www.w3school.com.cn/css/css_navbar.asp */
+/* Demo：导航栏 */
+/* 导航栏 */
+/* 易用的导航对于任何网站都很重要。 */
+/* 通过使用 CSS，您可以将无聊的 HTML 菜单转换为美观的导航栏。 */
+
+/* 导航栏 = 链接列表 */
+/* 导航栏需要标准 HTML 作为基础。 */
+
+/* 在我们的实例中，将用标准的 HTML 列表构建导航栏。 */
+/* 导航栏基本上就是链接列表，因此使用 <ul> 和 <li> 元素会很有意义： */
+/* 实例 */
+/* 
+<ul>
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">News</a></li>
+  <li><a href="contact.asp">Contact</a></li>
+  <li><a href="about.asp">About</a></li>
+</ul>
+ */
+/* 现在，从列表中删除项目符号以及外边距和内边距（填充）： */
+/* 实例 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* 例子解释： */
+/* list-style-type: none; - 删除项目符号。导航条不需要列表项标记。 */
+/* 设置 margin: 0; 和 padding: 0; 删除浏览器的默认设置。 */
+
+
+
+
+
+
+
+
+/* https://www.w3school.com.cn/css/css_navbar_vertical.asp */
+/* 如需构建垂直导航栏，还可以在列表中设置 <a> 元素的样式： */
+/* 实例 */
+li a {
+  display: block;
+  width: 60px;
+}
+/* 例子解释： */
+/* display: block; - 将链接显示为块元素可以使整个链接区域都可以被单击（而不仅仅是文本），我们还可以指定宽度（如果需要，还可以指定内边距、外边距、高度等）。 */
+/* width: 60px; - 默认情况下，块元素会占用全部可用宽度。我们需要指定 60 像素的宽度。 */
+/* 您还可以设置 <ul> 的宽度，并删除 <a> 的宽度，因为当显示为块元素时，它们将占据可用的全部宽度。这将导致与我们之前的例子相同的结果： */
+/* 实例 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+} 
+li a {
+  display: block;
+}
+
+/* 垂直导航栏实例 */
+/* 创建背景色为灰色的基础垂直导航栏，并在用户将鼠标移到链接上时改变链接的背景色： */
+/* 实例 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+/* 鼠标悬停时改变链接颜色 */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* 垂直导航栏实例 */
+/* 创建背景色为灰色的基础垂直导航栏，并在用户将鼠标移到链接上时改变链接的背景色： */
+/* 实例 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+/* 鼠标悬停时改变链接颜色 */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* 活动/当前导航链接 */
+/* 向当前链接添加 "active" 类，以使用户知道他/她在哪个页面上： */
+/* 实例 */
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* 居中链接以及添加边框 */
+/* 把 text-align:center 添加到 <li> 或 <a>，使链接居中。 */
+/* 将 border 属性添加到 <ul>，在导航栏周围添加边框。如果您还希望在导航栏内添加边框，请为所有 <li> 元素添加 border-bottom，最后一个元素除外： */
+/* 实例 */
+ul {
+  border: 1px solid #555;
+}
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+li:last-child {
+  border-bottom: none;
+}
+
+/* 全高固定垂直导航栏 */
+/* 创建全高的“粘性”侧面导航： */
+/* 实例 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  height: 100%; /* 全高 */
+  position: fixed; /* 使它产生粘性，即使在滚动时 */
+  overflow: auto; /* 如果侧栏的内容太多，则启用滚动条 */
+}
+/* 注意：本例在移动设备上可能无法正常工作。 */
+
+
+
+
+
+
+
+
+/* https://www.w3school.com.cn/css/css_navbar_horizontal.asp */
+/* CSS 水平导航栏 */
+/* 水平导航栏 */
+/* 有两种创建水平导航栏的方法：使用行内或浮动列表项。/ */
+
+/* 行内列表项 */
+/* 构建水平导航栏的一种方法是，除了上一章中的“标准”代码外，还要将 <li> 元素指定为 inline： */
+/* 实例 */
+li {
+  display: inline;
+}
+/* 例子解释： */
+/* display: inline; -默认情况下，<li> 元素是块元素。在这里，我们删除每个列表项之前和之后的换行符，这样它们才能显示在一行。 */
+
+
+/* 浮动列表项 */
+/* 创建水平导航栏的另一种方法是浮动 <li> 元素，并为导航链接规定布局： */
+/* 实例 */
+li {
+  float: left;
+}
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+/* 例子解释： */
+/* float: left; - 使用 float 使块元素滑动为彼此相邻 */
+/* display: block; - 将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等） */
+/* padding: 8px; - 使块元素更美观 */
+/* background-color: #dddddd; - 为每个元素添加灰色背景色 */
+/* 提示：如需全宽的背景色，请将 background-color 添加到 <ul> 而不是每个 <a> 元素： */
+/* 实例 */
+ul {
+  background-color: #dddddd;
+}
+
+
+/* 水平导航栏实例 */
+/* 创建具有深色背景色的基础水平导航栏，并在用户将鼠标移到链接上方时改变链接的背景色： */
+/* 实例 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* 当鼠标悬停时把链接颜色更改为 #111（黑色） */
+li a:hover {
+  background-color: #111;
+}
+
+
+/* 活动/当前导航链接 */
+/* 向当前链接添加 "active" 类，这样用户就知道他/她在哪个页面上： */
+/* 实例 */
+.active {
+  background-color: #4CAF50;
+}
+
+/* 右对齐链接 */
+/* 通过将列表项向右浮动来右对齐链接（float:right;）： */
+/* 实例 */
+/* 
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+ */
+/* 边框分隔栏 */
+/* 将 border-right 属性添加到 <li>，以创建链接分隔符： */
+/* 实例 */
+/* 为所有列表项添加灰色右边框，最后一项（last-child）除外 */
+li {
+  border-right: 1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+
+/* 固定的导航栏 */
+/* 使导航栏保持在页面的顶部或底部，即使用户滚动页面也是如此： */
+
+/* 固定在顶部 */
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* 固定在底部 */
+ul {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* 注意：固定定位在移动设备上可能无法正常工作。 */
+
+/* 灰色水平导航栏 */
+/* 带有细灰色边框的灰色水平导航栏的实例 */
+/* 实例 */
+ul {
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li a {
+  color: #666;
+}
+
+
+/* 粘性导航栏 */
+/* 为 <ul> 添加 position: sticky;，以创建粘性导航栏。 */
+/* 粘性元素会根据滚动位置在相对和固定之间切换。它是相对定位的，直到在视口中遇到给定的偏移位置为止 - 然后将其“粘贴”在适当的位置（比如 position:fixed）。 */
+/* 实例 */
+ul {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+/* 注意：Internet Explorer、Edge 15 和更早版本不支持粘性定位。 Safari 需要 -webkit- 前缀（请参见上面的例子）。您还必须指定 top、right、bottom 或 left 至少之一，以使粘性定位起作用。 */
+
+
+
+
+
+
+
+/* CSS 下拉菜单 */
+
+/* 基础的下拉菜单 */
+/* 创建当用户将鼠标移到元素上时出现的下拉框。 */
+/* 实例 */
+/* 
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+
+<div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+    <p>Hello World!</p>
+  </div>
+</div>
+ */
+/* 例子解释： */
+/* HTML */
+/* 使用任何元素打开下拉菜单内容，例如 <span> 或 <button> 元素。 */
+/* 使用容器元素（如 <div>）创建下拉内容，并在其中添加任何内容。 */
+/* 用 <div> 元素包围这些元素，使用 CSS 正确定位下拉内容。 */
+/* CSS */
+/* .dropdown 类使用 position:relative，当我们希望将下拉内容放置在下拉按钮的正下方（使用 position:absolute）时，需要使用该类。 */
+/* .dropdown-content 类保存实际的下拉菜单内容。默认情况下它是隐藏的，并将在悬停时显示（请看下文）。请注意，min-width 设置为 160px。可随时更改此设置。 */
+/* 提示：如果您希望下拉内容的宽度与下拉按钮的宽度一样，请将宽度设置为 100％（设置 overflow:auto 可实现在小屏幕上滚动）。 */
+/* 我们用了 CSS box-shadow 属性，而不是边框，这样下拉菜单看起来像一张“卡片”。 */
+/* 当用户将鼠标移到下拉按钮上时，:hover 选择器用于显示下拉菜单。 */
+
+
+/* 下拉式菜单 */
+/* 创建一个下拉菜单，并允许用户从列表中选择一个选项： */
+/* 本例与上例相似，除了我们在下拉框内添加链接并为其设置了样式，以此匹配下拉按钮的样式： */
+
+/* 实例 */
+/* 
+<style>
+设置下拉按钮的样式
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+容器 <div> - 需要放置下拉内容
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+下拉内容（默认隐藏）
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+下拉链接
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+悬停时更改下拉链接的颜色
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+悬停时显示下拉菜单
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+显示下拉内容时，更改下拉按钮的背景颜色
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+ */
+
+
+
+

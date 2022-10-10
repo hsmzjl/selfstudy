@@ -1,0 +1,267 @@
+/* https://www.w3school.com.cn/css/css3_images.asp */
+/* 图像样式 */
+
+/* 圆角图像 */
+/* 使用 border-radius 属性创建圆形图像： */
+/* 实例 */
+/* 圆角图像: */
+img {
+  border-radius: 8px;
+}
+/* 实例 */
+/* 圆形图像： */
+img {
+  border-radius: 50%;
+}
+
+/* 缩略图图像 */
+/* 使用 border 属性创建缩略图。 */
+
+/* 缩略图： */
+/* 实例 */
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+/* <img src="paris.jpg" alt="Paris"> */
+
+/* 作为链接的缩略图： */
+/* 实例 */
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+img:hover {
+box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+/* 
+<a href="paris.jpg">
+  <img src="paris.jpg" alt="Paris">
+</a>
+*/
+
+
+/* 响应式图像 */
+/* 响应式图像会自动调整以适合屏幕尺寸。 */
+/* 如果您希望根据需要缩小图像，但需要杜绝放大到大于原始尺寸，请添加如下代码： */
+/* 实例 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* 居中图像 */
+/* 如需使图像居中，请将左右外边距设置为 auto 并将其设置为块元素： */
+/* 实例 */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+/* 宝丽来图片 / 卡片 */
+/* 实例 */
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img {width: 100%}
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+
+/* 透明图像 */
+/* opacity 属性的取值范围为 0.0 - 1.0。值越低，越透明： */
+/* 实例 */
+img {
+  opacity: 0.5;
+}
+
+
+/* 图像滤镜 */
+/* CSS filter 属性把视觉效果（如模糊和饱和度）添加到元素。 */
+/* 实例 */
+/* 把所有图像的颜色更改为黑白（100％ 灰色）： */
+img {
+  filter: grayscale(100%);
+}
+
+
+/* 翻转图像 */
+/* 请把鼠标移到图像上： */
+/* 实例 */
+img:hover {
+  transform: scaleX(-1);
+}
+
+/* 响应式图库 */
+/* 我们可以使用 CSS 创建自适应的图片库。 */
+/* 本例使用媒体查询来重新排列不同屏幕尺寸的图像。请调整浏览器窗口的大小以查看效果： */
+/* 实例 */
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+@media only screen and (max-width: 700px){
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+@media only screen and (max-width: 500px){
+  .responsive {
+    width: 100%;
+  }
+}
+
+
+/* 图像模态（Image Modal） */
+/* 这是一个演示 CSS 和 JavaScript 如何协同工作的例子。 */
+/* 首先，请使用 CSS 创建模态窗口（对话框），并默认将其隐藏。 */
+/* 然后，当用户单击图像时，使用 JavaScript 显示模态窗口并在模态内部显示图像： */
+/* 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1500px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)} 
+  to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+/* 
+</style>
+</head>
+<body>
+
+<h1>图像模态</h1>
+
+<p>在此例中，我们使用 CSS 创建默认情况下隐藏的模式（对话框）。</p>
+<p>我们使用 JavaScript 触发模态，并在单击模态时在模态内显示当前图像。还请注意，我们将图像的“alt”属性中的值用作模态内的图像标题文本。</p>
+<p>如果您无法立即理解代码，请不要担心。学习完 CSS 后，请转到我们的 JavaScript 教程学习更多相关知识。</p>
+
+<img id="myImg" src="/i/photo/tiyugongyuan.jpg" alt="绿茵场" style="width: 50%;">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
+ */
+
+
+
+
+

@@ -1,0 +1,244 @@
+/* CSS 外边距 */
+/* CSS margin 属性用于在任何定义的边框之外，为元素周围创建空间。 */
+/* 通过 CSS，您可以完全控制外边距。有一些属性可用于设置元素每侧（上、右、下和左）的外边距。 */
+/* Margin - 单独的边 */
+/* CSS 拥有用于为元素的每一侧指定外边距的属性： */
+margin-top
+margin-right
+margin-bottom
+margin-left
+/* 所有外边距属性都可以设置以下值： */
+/* auto - 浏览器来计算外边距 */
+/* length - 以 px、pt、cm 等单位指定外边距 */
+/* % - 指定以包含元素宽度的百分比计的外边距 */
+/* inherit - 指定应从父元素继承外边距 */
+/* 提示：允许负值。 */
+/* 实例 */
+/* 为 <p> 元素的所有四个边设置不同的外边距： */
+p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
+/* Margin - 简写属性 */
+/* 为了缩减代码，可以在一个属性中指定所有外边距属性。 */
+/* margin 属性是以下各外边距属性的简写属性： */
+margin-top
+margin-right
+margin-bottom
+margin-left
+/* 工作原理是这样的： */
+/* 如果 margin 属性有四个值： */
+/* margin: 25px 50px 75px 100px; */
+/* 上外边距是 25px */
+/* 右外边距是 50px */
+/* 下外边距是 75px */
+/* 左外边距是 100px */
+/* 实例 */
+/* margin 简写属性设置四个值： */
+p {
+  margin: 25px 50px 75px 100px;
+}
+
+/* 如果 margin 属性设置三个值： */
+/* margin: 25px 50px 75px; */
+/* 上外边距是 25px */
+/* 右和左外边距是 50px */
+/* 下外边距是 75px */
+/* 实例 */
+/* 使用已设置三个值的 margin 简写属性： */
+p {
+  margin: 25px 50px 75px;
+}
+
+/* 如果 margin 属性设置两个值： */
+/* margin: 25px 50px; */
+/* 上和下外边距是 25px */
+/* 右和左外边距是 50px */
+/* 实例 */
+/* 使用设置了两个值的 margin 简写属性： */
+p {
+  margin: 25px 50px;
+}
+
+/* 如果 margin 属性设置了一个值： */
+/* margin: 25px; */
+/* 所有四个外边距都是 25px */
+/* 实例 */
+/* 使用设置一个值的 margin 简写属性： */
+p {
+  margin: 25px;
+}
+
+/* auto 值 */
+/* 您可以将 margin 属性设置为 auto，以使元素在其容器中水平居中。 */
+/* 然后，该元素将占据指定的宽度，并且剩余空间将在左右边界之间平均分配。 */
+/* 实例 */
+/* 使用 margin: auto： */
+div {
+  width: 300px;
+  margin: auto;
+  border: 1px solid red;
+}
+
+/* inherit 值 */
+/* 本例使 <p class="ex1"> 元素的左外边距继承自父元素（<div>）： */
+/* 实例 */
+/* 使用 inherit 值： */
+div {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+p.ex1 {
+  margin-left: inherit;
+}
+
+
+/* CSS 外边距合并 */
+/* 外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。 */
+/* 合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。 */
+
+/* 外边距合并 */
+/* 外边距合并（叠加）是一个相当简单的概念。但是，在实践中对网页进行布局时，它会造成许多混淆。 */
+/* 简单地说，外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。 */
+
+/* 注释：只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。 */
+
+
+/* CSS 内边距 */
+/* CSS padding 属性用于成在任何定义的边界内的元素内容周围生空间。 */
+/* 通过 CSS，您可以完全控制内边距（填充）。有一些属性可以为元素的每一侧（上、右、下和左侧）设置内边距。 */
+
+/* Padding - 单独的边 */
+/* CSS 拥有用于为元素的每一侧指定内边距的属性： */
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+/* 所有内边距属性都可以设置以下值： */
+/* length - 以 px、pt、cm 等单位指定内边距 */
+/* % - 指定以包含元素宽度的百分比计的内边距 */
+/* inherit - 指定应从父元素继承内边距 */
+/* 提示：不允许负值。 */
+
+/* 实例 */
+/* 为 <div> 元素的所有四个边设置不同的内边距： */
+div {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+/* Padding - 简写属性 */
+/* 为了缩减代码，可以在一个属性中指定所有内边距属性。 */
+/* padding 属性是以下各内边距属性的简写属性： */
+padding-top
+padding-right
+padding-bottom
+padding-left
+/* 工作原理是这样的： */
+/* 如果 padding 属性有四个值： */
+/* padding: 25px 50px 75px 100px; */
+/* 上内边距是 25px */
+/* 右内边距是 50px */
+/* 下内边距是 75px */
+/* 左内边距是 100px */
+/* 实例 */
+/* 使用设置了四个值的 padding 简写属性： */
+div {
+  padding: 25px 50px 75px 100px;
+}
+
+/* 如果 padding 属性设置了三个值： */
+/* padding: 25px 50px 75px; */
+/* 上内边距是 25px */
+/* 右和左内边距是 50px */
+/* 下内边距是 75px */
+/* 实例 */
+/* 使用设置了三个值的 padding 简写属性： */
+div {
+  padding: 25px 50px 75px;
+}
+
+/* 如果 padding 属性设置了两个值： */
+/* padding: 25px 50px; */
+/* 上和下内边距是 25px */
+/* 右和左内边距是 50px */
+/* 实例 */
+/* 使用设置了两个值的 padding 简写属性： */
+div {
+  padding: 25px 50px;
+}
+
+/* 如果 padding 属性设置了一个值： */
+/* padding: 25px; */
+/* 所有四个内边距都是 25px */
+/* 实例 */
+/* 使用设置了一个值的 padding 简写属性： */
+div {
+  padding: 25px;
+}
+
+/* 内边距和元素宽度 */
+/* CSS width 属性指定元素内容区域的宽度。内容区域是元素（盒模型）的内边距、边框和外边距内的部分。 */
+/* 因此，如果元素拥有指定的宽度，则添加到该元素的内边距会添加到元素的总宽度中。这通常是不希望的结果。 */
+/* 实例 */
+/* 在这里，<div> 元素的宽度为 300px。但是，<div> 元素的实际宽度将是 350px（300px + 左内边距 25px + 右内边距 25px）： */
+div {
+  width: 300px;
+  padding: 25px;
+}
+/* 若要将宽度保持为 300px，无论填充量如何，那么您可以使用 box-sizing 属性。这将导致元素保持其宽度。如果增加内边距，则可用的内容空间会减少。 */
+/* 实例 */
+/* 使用 box-sizing 属性将宽度保持为 300px，无论填充量如何： */
+div {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+
+
+/* overflow:hidden  解决外边距塌陷 */
+/* 父级元素内部有子元素，如果给子元素添加margin-top样式，那么父级元素也会跟着下来，造成外边距塌陷，如下： */
+
+/* css样式 */
+/* 
+<style type="text/css">
+    .box{ background:skyblue;}
+    .kid{ width: 100px;height: 100px; background: yellow; margin-top: 20px}
+</style>
+  */
+/* html */
+/* 
+<body>
+    <div class="box">
+	<div class="kid">子元素1</div>
+    </div>
+</body>
+ */
+/* 因此，给父级元素添加overflow:hidden，就可以解决这个问题了。 */
+
+/*css样式*/
+/* 
+<style type="text/css">
+    .box{ background:skyblue;
+          overflow: hidden; 解决外边距塌陷   
+        }
+    .kid{ width: 100px;height: 100px; background: yellow; margin-top: 20px}
+</style>
+  */
+/*html*/
+/* 
+<body>
+    <div class="box">
+	<div class="kid">子元素1</div>
+    </div>
+</body>
+ */
+
+

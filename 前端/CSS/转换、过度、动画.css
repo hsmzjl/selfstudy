@@ -1,0 +1,562 @@
+/* https://www.w3school.com.cn/css/css3_2dtransforms.asp */
+
+/* CSS 2D 转换 */
+/* CSS 转换（transforms）允许您移动、旋转、缩放和倾斜元素。 */
+
+/* CSS 2D 转换方法 */
+/* 通过使用 CSS transform 属性，您可以利用以下 2D 转换方法： */
+/* translate() */
+/* rotate() */
+/* scaleX() */
+/* scaleY() */
+/* scale() */
+/* skewX() */
+/* skewY() */
+/* skew() */
+/* matrix() */
+
+
+/* translate() 方法 */
+/* translate() 方法从其当前位置移动元素（根据为 X 轴和 Y 轴指定的参数）。 */
+/* 下面的例子把 <div> 元素从其当前位置向右移动 50 个像素，并向下移动 100 个像素： */
+/* 实例 */
+div {
+  transform: translate(50px, 100px);
+}
+
+
+/* rotate() 方法 */
+/* rotate() 方法根据给定的角度顺时针或逆时针旋转元素。 */
+/* 下面的例子把 <div> 元素顺时针旋转 20 度： */
+/* 实例 */
+div {
+  transform: rotate(20deg);
+}
+
+/* 使用负值将逆时针旋转元素。 */
+/* 下面的例子把 <div> 元素逆时针旋转 20 度： */
+/* 实例 */
+div {
+  transform: rotate(-20deg);
+}
+
+
+/* scale() 方法 */
+/* scale() 方法增加或减少元素的大小（根据给定的宽度和高度参数）。 */
+/* 下面的例子把 <div> 元素增大为其原始宽度的两倍和其原始高度的三倍： */
+/* 实例 */
+div {
+  transform: scale(2, 3);
+}
+/* 下面的例子把 <div> 元素减小为其原始宽度和高度的一半： */
+/* 实例 */
+div {
+  transform: scale(0.5, 0.5);
+}
+
+
+/* scaleX() 方法 */
+/* scaleX() 方法增加或减少元素的宽度。 */
+/* 下面的例子把 <div> 元素增大为其原始宽度的两倍： */
+/* 实例 */
+div {
+  transform: scaleX(2);
+}
+/* 以下例子把 <div> 元素缩减为其原始宽度的一半： */
+/* 实例 */
+div {
+  transform: scaleX(0.5);
+}
+
+
+/* scaleY() 方法 */
+/* scaleY() 方法增加或减少元素的高度。 */
+/* 下面的例子把 <div> 元素增大到其原始高度的三倍： */
+/* 实例 */
+div {
+  transform: scaleY(3);
+}
+/* 下面的例子把 <div> 元素缩减为其原始高度的一半： */
+/* 实例 */
+div {
+  transform: scaleY(0.5);
+}
+
+
+/* skewX() 方法 */
+/* skewX() 方法使元素沿 X 轴倾斜给定角度。 */
+/* 下例把 <div> 元素沿X轴倾斜 20 度： */
+/* 实例 */
+div {
+  transform: skewX(20deg);
+}
+
+
+/* skewY() 方法 */
+/* skewY() 方法使元素沿 Y 轴倾斜给定角度。 */
+/* 下例把 <div> 元素沿 Y 轴倾斜 20 度： */
+/* 实例 */
+div {
+  transform: skewY(20deg);
+}
+
+
+/* skew() 方法 */
+/* skew() 方法使元素沿 X 和 Y 轴倾斜给定角度。 */
+/* 下面的例子使 <div> 元素沿 X 轴倾斜 20 度，同时沿 Y 轴倾斜 10 度： */
+/* 实例 */
+div {
+  transform: skew(20deg, 10deg);
+}
+/* 如果未指定第二个参数，则值为零。因此，下例使 <div> 元素沿 X 轴倾斜 20 度： */
+/* 实例 */
+div {
+  transform: skew(20deg);
+}
+
+
+/* matrix() 方法 */
+/* matrix() 方法把所有 2D 变换方法组合为一个。 */
+/* matrix() 方法可接受六个参数，其中包括数学函数，这些参数使您可以旋转、缩放、移动（平移）和倾斜元素。 */
+/* 参数如下：matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY()) */
+/* 实例 */
+div {
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+
+
+
+
+/* CSS 3D 转换 */
+/* CSS 还支持 3D 转换。 */
+/* CSS 3D 转换方法 */
+/* 通过 CSS transform 属性，您可以使用以下 3D 转换方法： */
+
+/* rotateX() */
+/* rotateY() */
+/* rotateZ() */
+
+/* rotateX() 方法 */
+/* rotateX() 方法使元素绕其 X 轴旋转给定角度： */
+/* 实例 */
+#myDiv {
+  transform: rotateX(150deg);
+}
+
+/* rotateY() 方法 */
+/* rotateY() 方法使元素绕其 Y 轴旋转给定角度： */
+/* 实例 */
+#myDiv {
+  transform: rotateY(130deg);
+}
+
+/* rotateZ() 方法 */
+/* rotateZ() 方法使元素绕其 Z 轴旋转给定角度： */
+/* 实例 */
+#myDiv {
+  transform: rotateZ(90deg);
+}
+
+
+
+
+
+
+/* CSS 过渡 */
+
+/* CSS 过渡 */
+/* CSS 过渡允许您在给定的时间内平滑地改变属性值。 */
+/* 在本章中，您将学习如下属性： */
+/* transition */
+transition-delay
+transition-duration
+transition-property
+transition-timing-function
+
+/* 如何使用 CSS 过渡？ */
+/* 如需创建过渡效果，必须明确两件事： */
+
+/* 您要添加效果的 CSS 属性 */
+/* 效果的持续时间 */
+/* 注意：如果未规定持续时间部分，则过渡不会有效果，因为默认值为 0。 */
+/* 下面的例子展示了 100px * 100px 的红色 <div> 元素。 <div> 元素还为 width 属性指定了过渡效果，持续时间为 2 秒： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+/* 当指定的 CSS 属性（width）值发生变化时，将开始过渡效果。 */
+/* 现在，让我们为 width 属性指定一个鼠标悬停在 <div> 元素上时的新值： */
+/* 实例 */
+div:hover {
+  width: 300px;
+}
+/* 请注意，当光标从元素上移开时，它将逐渐变回其原始样式。 */
+/* 改变若干属性值 */
+/* 下面的例子为 width 和 height 属性都添加了过渡效果，width 是 2 秒，height 是 4 秒： */
+/* 实例 */
+div {
+  transition: width 2s, height 4s;
+}
+
+
+/* 指定过渡的速度曲线 */
+/* transition-timing-function 属性规定过渡效果的速度曲线。 */
+/* transition-timing-function 属性可接受以下值： */
+/* ease - 规定过渡效果，先缓慢地开始，然后加速，然后缓慢地结束（默认） */
+/* linear - 规定从开始到结束具有相同速度的过渡效果 */
+/* ease-in -规定缓慢开始的过渡效果 */
+/* ease-out - 规定缓慢结束的过渡效果 */
+/* ease-in-out - 规定开始和结束较慢的过渡效果 */
+/* cubic-bezier(n,n,n,n) - 允许您在三次贝塞尔函数中定义自己的值 */
+/* 下面的例子展示了可以使用的一些不同的速度曲线： */
+
+/* 实例 */
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}
+
+
+/* 延迟过渡效果 */
+/* transition-delay 属性规定过渡效果的延迟（以秒计）。 */
+/* 下例在启动之前有 1 秒的延迟： */
+/* 实例 */
+div {
+  transition-delay: 1s;
+}
+
+/* 过渡 + 转换 */
+/* 下例为转换添加过渡效果： */
+/* 实例 */
+div {
+  transition: width 2s, height 2s, transform 2s;
+}
+
+/* 更多过渡实例 */
+/* 您可以可以一一指定 CSS 过渡属性，如下所示： */
+/* 实例 */
+div {
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}
+
+/* 或使用简写的 transition 属性： */
+/* 实例 */
+div {
+  transition: width 2s linear 1s;
+}
+
+
+/* CSS 过渡属性 */
+/* 下表列出了所有 CSS 过渡属性： */
+/* 属性	                       描述 */
+/* transition	                简写属性，用于将四个过渡属性设置为单一属性。 */
+/* transition-delay	          规定过渡效果的延迟（以秒计）。 */
+/* transition-duration	      规定过渡效果要持续多少秒或毫秒。 */
+/* transition-property	      规定过渡效果所针对的 CSS 属性的名称。 */
+/* transition-timing-function	规定过渡效果的速度曲线。 */
+
+
+
+
+
+
+
+/* CSS 动画 */
+
+/* CSS 动画 */
+/* CSS 可实现 HTML 元素的动画效果，而不使用 JavaScript 或 Flash！ */
+/* 在本章中，您将学习如下属性： */
+/* @keyframes */
+/* animation-name */
+/* animation-duration */
+/* animation-delay */
+/* animation-iteration-count */
+/* animation-direction */
+/* animation-timing-function */
+/* animation-fill-mode */
+/* animation */
+
+/* 什么是 CSS 动画？ */
+/* 动画使元素逐渐从一种样式变为另一种样式。 */
+/* 您可以随意更改任意数量的 CSS 属性。 */
+/* 如需使用 CSS 动画，您必须首先为动画指定一些关键帧。 */
+/* 关键帧包含元素在特定时间所拥有的样式。 */
+
+
+/* @keyframes 规则 */
+/* 如果您在 @keyframes 规则中指定了 CSS 样式，动画将在特定时间逐渐从当前样式更改为新样式。 */
+/* 要使动画生效，必须将动画绑定到某个元素。 */
+/* 下面的例子将 "example" 动画绑定到 <div> 元素。动画将持续 4 秒钟，同时将 <div> 元素的背景颜色从 "red" 逐渐改为 "yellow"： */
+/* 实例 */
+/* 动画代码 */
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+/* 向此元素应用动画效果 */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* 注意：animation-duration 属性定义需要多长时间才能完成动画。如果未指定 animation-duration 属性，则动画不会发生，因为默认值是 0s（0秒）。 */
+/* 在上面的例子中，通过使用关键字 "from" 和 "to"（代表 0％（开始）和 100％（完成）），我们设置了样式何时改变。 */
+/* 您也可以使用百分比值。通过使用百分比，您可以根据需要添加任意多个样式更改。 */
+/* 下面的例子将在动画完成 25％，完成 50％ 以及动画完成 100％ 时更改 <div> 元素的背景颜色： */
+/* 实例 */
+/* 动画代码 */
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+/* 应用动画的元素 */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* 下面的例子将在动画完成 25％，完成 50％ 以及动画完成 100％ 时更改背景颜色和 <div> 元素的位置： */
+/* 实例 */
+/* 动画代码 */
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* 应用动画的元素 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+
+/* 延迟动画 */
+/* animation-delay 属性规定动画开始的延迟时间。 */
+/* 下面的例子在开始动画前有 2 秒的延迟： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+
+/* 负值也是允许的。如果使用负值，则动画将开始播放，如同已播放 N 秒。 */
+/* 在下面的例子中，动画将开始播放，就好像它已经播放了 2 秒钟一样： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: -2s;
+}
+
+
+/* 设置动画应运行多少次 */
+/* animation-iteration-count 属性指定动画应运行的次数。 */
+/* 下面的例子在停止前把动画运行 3 次： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 3;
+}
+
+
+/* 下面的例子使用值 "infinite" 使动画永远持续下去： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+
+/* 反向或交替运行动画 */
+/* animation-direction 属性指定是向前播放、向后播放还是交替播放动画。 */
+/* animation-direction 属性可接受以下值： */
+/* normal - 动画正常播放（向前）。默认值 */
+/* reverse - 动画以反方向播放（向后） */
+/* alternate - 动画先向前播放，然后向后 */
+/* alternate-reverse - 动画先向后播放，然后向前 */
+/* 下例将以相反的方向（向后）运行动画： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+
+/* 下面的例子使用值 "alternate" 使动画先向前运行，然后向后运行： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+
+/* 下面的例子使用值 "alternate-reverse" 使动画先向后运行，然后向前运行： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: alternate-reverse;
+}
+
+
+/* 指定动画的速度曲线 */
+/* animation-timing-function 属性规定动画的速度曲线。 */
+/* animation-timing-function 属性可接受以下值： */
+/* ease - 指定从慢速开始，然后加快，然后缓慢结束的动画（默认） */
+/* linear - 规定从开始到结束的速度相同的动画 */
+/* ease-in - 规定慢速开始的动画 */
+/* ease-out - 规定慢速结束的动画 */
+/* ease-in-out - 指定开始和结束较慢的动画 */
+/* cubic-bezier(n,n,n,n) - 运行您在三次贝塞尔函数中定义自己的值 */
+/* 下面这些例子展示了可以使用的一些不同速度曲线： */
+/* 实例 */
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+
+
+/* 指定动画的填充模式 */
+/* CSS 动画不会在第一个关键帧播放之前或在最后一个关键帧播放之后影响元素。animation-fill-mode 属性能够覆盖这种行为。 */
+/* 在不播放动画时（在开始之前，结束之后，或两者都结束时），animation-fill-mode 属性规定目标元素的样式。 */
+/* animation-fill-mode 属性可接受以下值： */
+/* none - 默认值。动画在执行之前或之后不会对元素应用任何样式。 */
+/* forwards - 元素将保留由最后一个关键帧设置的样式值（依赖 animation-direction 和 animation-iteration-count）。 */
+/* backwards - 元素将获取由第一个关键帧设置的样式值（取决于 animation-direction），并在动画延迟期间保留该值。 */
+/* both - 动画会同时遵循向前和向后的规则，从而在两个方向上扩展动画属性。 */
+/* 下面的例子让 <div> 元素在动画结束时保留来自最后一个关键帧的样式值： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+
+/* 下面的例子在动画开始之前（在动画延迟期间）使 <div> 元素获得由第一个关键帧设置的样式值： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}
+
+
+/* 下面的例子在动画开始之前使 <div> 元素获得第一个关键帧设置的样式值，以及在动画结束时保留最后一个关键帧的样式值： */
+/* 实例 */
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+
+/* 动画简写属性 */
+/* 下例使用六种动画属性： */
+/* 实例 */
+div {
+  animation-name: example;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+/* 使用简写的 animation 属性也可以实现与上例相同的动画效果： */
+/* 实例 */
+div {
+  animation: example 5s linear 2s infinite alternate;
+}
+
+
+/* CSS 动画属性 */
+/* 下表列出了 @keyframes 规则和所有 CSS 动画属性： */
+/* 属性	                        描述 */
+/* @keyframes	                  规定动画模式。 */
+/* animation	                  设置所有动画属性的简写属性。 */
+/* animation-delay	            规定动画开始的延迟。 */
+/* animation-direction	        定动画是向前播放、向后播放还是交替播放。 */
+/* animation-duration	          规定动画完成一个周期应花费的时间。 */
+/* animation-fill-mode	        规定元素在不播放动画时的样式（在开始前、结束后，或两者同时）。 */
+/* animation-iteration-count	  规定动画应播放的次数。 */
+/* animation-name	              规定 @keyframes 动画的名称。 */
+/* animation-play-state	        规定动画是运行还是暂停。 */
+/* animation-timing-function	  规定动画的速度曲线。 */

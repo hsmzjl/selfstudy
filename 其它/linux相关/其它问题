@@ -1,0 +1,37 @@
+1、密码正确，SSH无法登陆
+winscp提示：Disconnected:No supported authentication methods available
+
+    1 vi  /etc/ssh/sshd_config
+    2 找到#PermitRootLogin no将其修改为PermitRootLogin yes  // /yes表示root可以远程ssh登录。可能这里是no
+    3 把PasswordAuthentication设成yes    //这个设置是否可以账号密码登录
+    4 重启ssh服务：/etc/init.d/ssh start // 或者service ssh start启动SSH服务
+    重启服务器
+
+
+2、切换到root账号
+sudo - i
+然后输入密码
+
+3、vi 常见命令
+vi有三种工作模式 1、普通模式（刚进入时就是普通模式） 2、编辑模式（可以编辑文本）3、命令模式（进行一些高级命令操作，比如：保存，退出）
+工作模式切换 
+    在普通模式下输入 i(插入)、c(修改)、o(另起一行) 命令时进入编辑模式；按 esc 键退回到普通模式。
+    在普通模式下输入冒号(:)可以进入命令模式。输入完命令按回车，命令执行完后会自动退回普通模式。
+一般在命令模式下退出 vi 编辑器。
+退出命令	说明
+q	        如果文件未被修改，会直接退回到Shell；否则提示保存文件。
+q!	        强行退出，不保存修改内容。
+wq	        w 命令保存文件，q 命令退出 vi，合起来就是保存并退出。
+ZZ	        保存并退出，相当于 wq，但是更加方便。
+
+
+
+4、设置密码
+sudo passwd
+
+
+
+
+
+
+

@@ -1,0 +1,401 @@
+JavaScript Array 对象
+https://www.runoob.com/jsref/jsref-obj-array.html
+
+
+数组属性
+constructor	返回创建数组对象的原型函数。
+length	设置或返回数组元素的个数。
+prototype	允许你向数组对象添加属性或方法。
+
+Array 对象方法
+concat()	连接两个或更多的数组，并返回结果。
+entries()	返回数组的可迭代对象。
+every()	检测数值元素的每个元素是否都符合条件。
+fill()	使用一个固定值来填充数组。
+filter()	检测数值元素，并返回符合条件所有元素的数组。
+find()	返回符合传入测试（函数）条件的数组元素。
+findIndex()	返回符合传入测试（函数）条件的数组元素索引。
+forEach()	数组每个元素都执行一次回调函数。
+from()	通过给定的对象中创建一个数组。
+includes()	判断一个数组是否包含一个指定的值。
+indexOf()	搜索数组中的元素，并返回它所在的位置。
+isArray()	判断对象是否为数组。
+join()	把数组的所有元素放入一个字符串。
+keys()	返回数组的可迭代对象，包含原始数组的键(key)。
+lastIndexOf()	搜索数组中的元素，并返回它最后出现的位置。
+map()	通过指定函数处理数组的每个元素，并返回处理后的数组。
+pop()	删除数组的最后一个元素并返回删除的元素。
+push()	向数组的末尾添加一个或更多元素，并返回新的长度。
+reduce()	将数组元素计算为一个值（从左到右）。
+reduceRight()	将数组元素计算为一个值（从右到左）。
+reverse()	反转数组的元素顺序。
+shift()	删除并返回数组的第一个元素。
+slice()	选取数组的一部分，并返回一个新数组。
+some()	检测数组元素中是否有元素符合指定条件。
+sort()	对数组的元素进行排序。
+splice()	从数组中添加或删除元素。
+toString()	把数组转换为字符串，并返回结果。
+unshift()	向数组的开头添加一个或更多元素，并返回新的长度。
+valueOf()	返回数组对象的原始值。
+
+
+
+JavaScript Date 对象
+https://www.runoob.com/jsref/jsref-obj-date.html
+
+Date 对象
+Date 对象用于处理日期与时间。
+创建 Date 对象： new Date()
+以下四种方法同样可以创建 Date 对象：
+var d = new Date();
+var d = new Date(milliseconds);
+var d = new Date(dateString);
+var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+Date 对象属性
+constructor	返回对创建此对象的 Date 函数的引用。
+prototype	使您有能力向对象添加属性和方法。
+
+Date 对象方法
+getDate()	从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+getDay()	从 Date 对象返回一周中的某一天 (0 ~ 6)。
+getFullYear()	从 Date 对象以四位数字返回年份。
+getHours()	返回 Date 对象的小时 (0 ~ 23)。
+getMilliseconds()	返回 Date 对象的毫秒(0 ~ 999)。
+getMinutes()	返回 Date 对象的分钟 (0 ~ 59)。
+getMonth()	从 Date 对象返回月份 (0 ~ 11)。
+getSeconds()	返回 Date 对象的秒数 (0 ~ 59)。
+getTime()	返回 1970 年 1 月 1 日至今的毫秒数。
+getTimezoneOffset()	返回本地时间与格林威治标准时间 (GMT) 的分钟差。
+getUTCDate()	根据世界时从 Date 对象返回月中的一天 (1 ~ 31)。
+getUTCDay()	根据世界时从 Date 对象返回周中的一天 (0 ~ 6)。
+getUTCFullYear()	根据世界时从 Date 对象返回四位数的年份。
+getUTCHours()	根据世界时返回 Date 对象的小时 (0 ~ 23)。
+getUTCMilliseconds()	根据世界时返回 Date 对象的毫秒(0 ~ 999)。
+getUTCMinutes()	根据世界时返回 Date 对象的分钟 (0 ~ 59)。
+getUTCMonth()	根据世界时从 Date 对象返回月份 (0 ~ 11)。
+getUTCSeconds()	根据世界时返回 Date 对象的秒钟 (0 ~ 59)。
+parse()	返回1970年1月1日午夜到指定日期（字符串）的毫秒数。
+setDate()	设置 Date 对象中月的某一天 (1 ~ 31)。
+setFullYear()	设置 Date 对象中的年份（四位数字）。
+setHours()	设置 Date 对象中的小时 (0 ~ 23)。
+setMilliseconds()	设置 Date 对象中的毫秒 (0 ~ 999)。
+setMinutes()	设置 Date 对象中的分钟 (0 ~ 59)。
+setMonth()	设置 Date 对象中月份 (0 ~ 11)。
+setSeconds()	设置 Date 对象中的秒钟 (0 ~ 59)。
+setTime()	setTime() 方法以毫秒设置 Date 对象。
+setUTCDate()	根据世界时设置 Date 对象中月份的一天 (1 ~ 31)。
+setUTCFullYear()	根据世界时设置 Date 对象中的年份（四位数字）。
+setUTCHours()	根据世界时设置 Date 对象中的小时 (0 ~ 23)。
+setUTCMilliseconds()	根据世界时设置 Date 对象中的毫秒 (0 ~ 999)。
+setUTCMinutes()	根据世界时设置 Date 对象中的分钟 (0 ~ 59)。
+setUTCMonth()	根据世界时设置 Date 对象中的月份 (0 ~ 11)。
+setUTCSeconds()	setUTCSeconds() 方法用于根据世界时 (UTC) 设置指定时间的秒字段。
+toDateString()	把 Date 对象的日期部分转换为字符串。
+toISOString()	使用 ISO 标准返回字符串的日期格式。
+toJSON()	以 JSON 数据格式返回日期字符串。
+toLocaleDateString()	根据本地时间格式，把 Date 对象的日期部分转换为字符串。
+toLocaleTimeString()	根据本地时间格式，把 Date 对象的时间部分转换为字符串。
+toLocaleString()	根据本地时间格式，把 Date 对象转换为字符串。
+toString()	把 Date 对象转换为字符串。
+toTimeString()	把 Date 对象的时间部分转换为字符串。
+toUTCString()	
+根据世界时，把 Date 对象转换为字符串。
+实例：
+var today = new Date();
+var UTCstring = today.toUTCString();
+UTC()	根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。
+valueOf()	返回 Date 对象的原始值。
+
+
+
+JavaScript Number 对象
+https://www.runoob.com/jsref/jsref-obj-number.html
+
+Number 对象
+Number 对象是原始数值的包装对象。
+Number 创建方式 new Number()。
+
+Number 对象方法
+isFinite	检测指定参数是否为无穷大。
+toExponential(x)	把对象的值转换为指数计数法。
+toFixed(x)	把数字转换为字符串，结果的小数点后有指定位数的数字。
+把数字转换为字符串，结果的小数点后有指定位数的数字：
+var num = 5.56789;
+var n=num.toFixed(2);
+n 输出结果:
+5.57
+
+toPrecision(x)	把数字格式化为指定的长度。
+把数字格式化为指定的长度:
+var num = new Number(13.3714);
+var n=num.toPrecision(2);
+n 输出结果:
+13
+
+toString()	把数字转换为字符串，使用指定的基数。
+valueOf()	返回一个 Number 对象的基本数字值。
+
+
+
+JavaScript String 对象
+https://www.runoob.com/jsref/jsref-obj-string.html
+
+String 对象属性
+constructor	对创建该对象的函数的引用
+length	字符串的长度
+prototype	允许您向对象添加属性和方法
+
+String 对象方法
+charAt()	返回在指定位置的字符。
+charCodeAt()	返回在指定的位置的字符的 Unicode 编码。
+concat()	连接两个或更多字符串，并返回新的字符串。
+fromCharCode()	将 Unicode 编码转为字符。
+indexOf()	返回某个指定的字符串值在字符串中首次出现的位置。
+includes()	查找字符串中是否包含指定的子字符串。
+lastIndexOf()	从后向前搜索字符串，并从起始位置（0）开始计算返回字符串最后出现的位置。
+match()	查找找到一个或多个正则表达式的匹配。
+repeat()	复制字符串指定次数，并将它们连接在一起返回。
+replace()	在字符串中查找匹配的子串，并替换与正则表达式匹配的子串。
+replaceAll()	在字符串中查找匹配的子串，并替换与正则表达式匹配的所有子串。
+search()	查找与正则表达式相匹配的值。
+slice()	提取字符串的片断，并在新的字符串中返回被提取的部分。
+split()	把字符串分割为字符串数组。
+startsWith()	查看字符串是否以指定的子字符串开头。
+substr()	从起始索引号提取字符串中指定数目的字符。
+substring()	提取字符串中两个指定的索引号之间的字符。
+toLowerCase()	把字符串转换为小写。
+toUpperCase()	把字符串转换为大写。
+trim()	去除字符串两边的空白
+toLocaleLowerCase()	根据本地主机的语言环境把字符串转换为小写。
+toLocaleUpperCase()	根据本地主机的语言环境把字符串转换为大写。
+valueOf()	返回某个字符串对象的原始值。
+toString()	返回一个字符串。
+
+
+
+JavaScript RegExp 对象
+https://www.runoob.com/jsref/jsref-obj-regexp.html
+
+语法
+var patt=new RegExp(pattern,modifiers);
+或者更简单的方式:
+var patt=/pattern/modifiers;
+pattern（模式） 描述了表达式的模式
+modifiers(修饰符) 用于指定全局匹配、区分大小写的匹配和多行匹配
+注意：当使用构造函数创造正则对象时，需要常规的字符转义规则（在前面加反斜杠 \）。比如，以下是等价的：
+var re = new RegExp("\\w+");
+var re = /\w+/;
+
+修饰符
+修饰符用于执行区分大小写和全局匹配:
+修饰符	描述
+i	执行对大小写不敏感的匹配。
+g	执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
+m	执行多行匹配。
+
+方括号
+方括号用于查找某个范围内的字符：
+表达式	描述
+[abc]	查找方括号之间的任何字符。
+[^abc]	查找任何不在方括号之间的字符。
+[0-9]	查找任何从 0 至 9 的数字。
+[a-z]	查找任何从小写 a 到小写 z 的字符。
+[A-Z]	查找任何从大写 A 到大写 Z 的字符。
+[A-z]	查找任何从大写 A 到小写 z 的字符。
+[adgk]	查找给定集合内的任何字符。
+[^adgk]	查找给定集合外的任何字符。
+(red|blue|green)	查找任何指定的选项。
+
+元字符
+元字符（Metacharacter）是拥有特殊含义的字符：
+元字符	描述
+.	查找单个字符，除了换行和行结束符。
+\w	查找数字、字母及下划线。
+\W	查找非单词字符。
+\d	查找数字。
+\D	查找非数字字符。
+\s	查找空白字符。
+\S	查找非空白字符。
+\b	匹配单词边界。
+\B	匹配非单词边界。
+\0	查找 NULL 字符。
+\n	查找换行符。
+\f	查找换页符。
+\r	查找回车符。
+\t	查找制表符。
+\v	查找垂直制表符。
+\xxx	查找以八进制数 xxx 规定的字符。
+\xdd	查找以十六进制数 dd 规定的字符。
+\uxxxx	查找以十六进制数 xxxx 规定的 Unicode 字符。
+
+量词
+量词	描述
+n+	
+匹配任何包含至少一个 n 的字符串。
+例如，/a+/ 匹配 "candy" 中的 "a"，"caaaaaaandy" 中所有的 "a"。
+n*	
+匹配任何包含零个或多个 n 的字符串。
+例如，/bo*/ 匹配 "A ghost booooed" 中的 "boooo"，"A bird warbled" 中的 "b"，但是不匹配 "A goat grunted"。
+n?	
+匹配任何包含零个或一个 n 的字符串。
+例如，/e?le?/ 匹配 "angel" 中的 "el"，"angle" 中的 "le"。
+n{X}	
+匹配包含 X 个 n 的序列的字符串。
+例如，/a{2}/ 不匹配 "candy," 中的 "a"，但是匹配 "caandy," 中的两个 "a"，且匹配 "caaandy." 中的前两个 "a"。
+n{X,}	
+X 是一个正整数。前面的模式 n 连续出现至少 X 次时匹配。
+例如，/a{2,}/ 不匹配 "candy" 中的 "a"，但是匹配 "caandy" 和 "caaaaaaandy." 中所有的 "a"。
+n{X,Y}	
+X 和 Y 为正整数。前面的模式 n 连续出现至少 X 次，至多 Y 次时匹配。
+例如，/a{1,3}/ 不匹配 "cndy"，匹配 "candy," 中的 "a"，"caandy," 中的两个 "a"，匹配 "caaaaaaandy" 中的前面三个 "a"。注意，当匹配 "caaaaaaandy" 时，即使原始字符串拥有更多的 "a"，匹配项也是 "aaa"。
+n$	匹配任何结尾为 n 的字符串。
+^n	匹配任何开头为 n 的字符串。
+?=n	匹配任何其后紧接指定字符串 n 的字符串。
+?!n	匹配任何其后没有紧接指定字符串 n 的字符串。
+
+RegExp 对象方法
+exec	检索字符串中指定的值。返回找到的值，并确定其位置。
+实例
+在字符串中全局搜索 "Hello" 和 "RUNOOB" 字符串:
+var str="Hello world!";
+//查找"Hello"
+var patt=/Hello/g;
+var result=patt.exec(str);
+document.write("返回值: " +  result); 
+//查找 "RUNOOB"
+patt=/RUNOOB/g;
+result=patt.exec(str);
+document.write("<br>返回值: " +  result);
+以上实例输出结果:
+Returned value: Hello
+Returned value: null
+
+test	检索字符串中指定的值。返回 true 或 false。
+实例
+在字符串中全局搜索 "Hello" 和 "Runoob" 字符串:
+var str="Hello world!";
+//查找"Hello"
+var patt=/Hello/g;
+var result=patt.test(str);
+document.write("返回值: " +  result); 
+//查找 "Runoob"
+patt=/Runoob/g;
+result=patt.test(str);
+document.write("<br>返回值: " +  result);
+以上实例输出结果:
+返回值: true
+返回值: false
+
+toString	返回正则表达式的字符串。
+
+支持正则表达式的 String 对象的方法
+search	检索与正则表达式相匹配的值。	1	4
+match	找到一个或多个正则表达式的匹配。	1	4
+replace	替换与正则表达式匹配的子串。	1	4
+split	把字符串分割为字符串数组。	1	4
+
+RegExp 对象属性
+constructor	返回一个函数，该函数是一个创建 RegExp 对象的原型。
+global	判断是否设置了 "g" 修饰符
+ignoreCase	判断是否设置了 "i" 修饰符
+lastIndex	用于规定下次匹配的起始位置
+multiline	判断是否设置了 "m" 修饰符
+source	返回正则表达式的匹配模式
+
+
+
+
+JavaScript 全局
+https://www.runoob.com/jsref/jsref-obj-global.html
+
+JavaScript 全局属性
+Infinity	代表正的无穷大的数值。
+NaN	指示某个值是不是数字值。
+undefined	指示未定义的值。
+
+JavaScript 全局函数
+decodeURI()	解码某个编码的 URI。
+decodeURIComponent()	解码一个编码的 URI 组件。
+encodeURI()	把字符串编码为 URI。
+encodeURIComponent()	把字符串编码为 URI 组件。
+escape()	对字符串进行编码。
+eval()	计算 JavaScript 字符串，并把它作为脚本代码来执行。
+isFinite()	检查某个值是否为有穷大的数。
+isNaN()	检查某个值是否是数字。
+Number()	把对象的值转换为数字。
+parseFloat()	解析一个字符串并返回一个浮点数。
+parseInt()	解析一个字符串并返回一个整数。
+String()	把对象的值转换为字符串。
+unescape()	对由 escape() 编码的字符串进行解码。
+
+
+
+JavaScript Error(错误) 对象
+https://www.runoob.com/jsref/jsref-obj-error.html
+
+Error 对象
+Error 对象在错误发生时提供了错误的提示信息。
+
+实例
+以下实例中 try 语句块包含了未定义的函数 "adddlert" ，执行它会产生错误，catch 语句块会输出该错误的信息：
+try {
+    adddlert("Welcome");
+}
+catch(err) {
+    document.getElementById("demo").innerHTML = 
+    err.name + "<br>" + err.message;
+}
+
+Error 对象属性
+name	设置或返回一个错误名
+message	设置或返回一个错误信息(字符串)
+
+JavaScript 错误 - throw、try 和 catch
+try 语句测试代码块的错误。
+catch 语句处理错误。
+throw 语句创建自定义错误。
+finally 语句在 try 和 catch 语句之后，无论是否有触发异常，该语句都会执行。
+
+语法
+try {
+    ...    //异常的抛出
+} catch(e) {
+    ...    //异常的捕获与处理
+} finally {
+    ...    //结束处理
+}
+
+Throw 语句
+throw 语句允许我们创建自定义错误。
+正确的技术术语是：创建或抛出异常（exception）。
+如果把 throw 与 try 和 catch 一起使用，那么您能够控制程序流，并生成自定义的错误消息。
+语法
+throw exception
+异常可以是 JavaScript 字符串、数字、逻辑值或对象。
+实例
+本例检测输入变量的值。如果值是错误的，会抛出一个异常（错误）。catch 会捕捉到这个错误，并显示一段自定义的错误消息：
+实例
+function myFunction() {
+    var message, x;
+    message = document.getElementById("message");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try { 
+        if(x == "")  throw "值为空";
+        if(isNaN(x)) throw "不是数字";
+        x = Number(x);
+        if(x < 5)    throw "太小";
+        if(x > 10)   throw "太大";
+    }
+    catch(err) {
+        message.innerHTML = "错误: " + err;
+    }
+}
+
+
+
+
+
+
+

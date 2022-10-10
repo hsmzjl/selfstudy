@@ -1,0 +1,144 @@
+https://www.cnblogs.com/liuxianan/p/js-excel.html
+
+js-xlsx  由SheetJS出品 支持xls、xlsx等；
+
+
+
+安装
+npm install xlsx
+
+引入
+const XLSX = require('xlsx'); 或 import XLSX from 'xlsx'  引入
+
+
+
+// json对象转Excel并导出
+const data = [{
+'姓名': 'zhangsan',
+'年龄': 20,
+'性别': '男'
+}, {
+'姓名': 'zhangsan',
+'年龄': 20,
+'性别': '男'
+}];
+// 新建空workbook，然后加入worksheet //{skipHeader:true}表示生成的sheet中去掉key这一行
+const sheet = XLSX.utils.json_to_sheet(data,{skipHeader:true})
+// 设置每列的列宽，10代表10个字符，注意中文占2个字符
+sheet['!cols'] = [
+{ wch: 10 },
+{ wch: 30 },
+{ wch: 25 }
+]
+// 新建book
+const workbook = XLSX.utils.book_new()
+// 生成xlsx文件(book,sheet数据,sheet命名)
+XLSX.utils.book_append_sheet(workbook, sheet, '数据详情')
+// 写文件(book,xlsx文件名称)
+XLSX.writeFile(workbook, '列表详情.xlsx')
+
+
+
+
+
+// 数组转Excel并导出
+// 一般情况
+async arrtoexcel() {
+    var aoa = [
+    ['姓名', '性别', '年龄', '注册时间'],
+    ['张三', '男', 18, new Date()],
+    ['李四', '女', 22, new Date()]
+    ];
+    var sheet = XLSX.utils.aoa_to_sheet(aoa);
+    this.openDownloadDialog(this.sheet2blob(sheet), '导出.xlsx');
+},
+// 需要合并单元格的情况
+var aoa = [
+	['主要信息', null, null, '其它信息'], // 特别注意合并的地方后面预留2个null
+	['姓名', '性别', '年龄', '注册时间'],
+	['张三', '男', 18, new Date()],
+	['李四', '女', 22, new Date()]
+];
+var sheet = XLSX.utils.aoa_to_sheet(aoa);
+sheet['!merges'] = [
+	// 设置A1-C1的单元格合并
+    {s: {r: 0, c: 0}, e: {r: 0, c: 2}}
+];
+
+// 打开对话框保存
+openDownloadDialog(url, saveName) {
+    if (typeof url == 'object' && url instanceof Blob) {
+    url = URL.createObjectURL(url); // 创建blob地址
+    }
+    var aLink = document.createElement('a');
+    aLink.href = url;
+    aLink.download = saveName || ''; // HTML5新增的属性，指定保存文件名，可以不要后缀，注意，file:///模式下不会生效
+    var event;
+    if (window.MouseEvent) event = new MouseEvent('click');
+    else {
+    event = document.createEvent('MouseEvents');
+    event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+    }
+    aLink.dispatchEvent(event);
+},
+// 将一个sheet转成最终的excel文件的blob对象，然后利用URL.createObjectURL下载
+sheet2blob(sheet, sheetName) {
+    sheetName = sheetName || 'sheet1';
+    var workbook = {
+    SheetNames: [sheetName],
+    Sheets: {}
+    };
+    workbook.Sheets[sheetName] = sheet;
+    // 生成excel的配置项
+    var wopts = {
+    bookType: 'xlsx', // 要生成的文件类型
+    bookSST: false, // 是否生成Shared String Table，官方解释是，如果开启生成速度会下降，但在低版本IOS设备上有更好的兼容性
+    type: 'binary'
+    };
+    var wbout = XLSX.write(workbook, wopts);
+    var blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+    // 字符串转ArrayBuffer
+    function s2ab(s) {
+    var buf = new ArrayBuffer(s.length);
+    var view = new Uint8Array(buf);
+    for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+    return buf;
+    }
+    return blob;
+},
+
+
+
+
+//读入EXCEL并生成json对象  sheet_to_json 参数1：工作表名称 
+参数2：对象{header："A"|number|string[]（0，表示用表第一行作为json对象KEY，1，表示给表添加一个数字序列作为key，2，自定义key，
+           defval：any 表示遇到空值是用什么填充
+           raw：boolean 如果为true，则返回原始数据；如果为false，则返回格式化文本
+           blankrows：boolean 在输出中包括或省略空行
+           rawNumbers：boolean 如果为true，则返回原始数据；如果为false，则返回格式化值）} 
+当参数2中 header：1 时，函数返回的实际上是一个二维数组（因为key是数字序列）
+var workbook = XLSX.readFile(path);
+var res = {};
+workbook.SheetNames.forEach(function (sheetName) {
+    var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { raw: false, header: 1, defval: null });
+    if (roa.length > 0) res[sheetName] = roa;
+});
+console.log(res)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

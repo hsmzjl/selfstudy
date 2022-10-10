@@ -1,0 +1,319 @@
+/* CSS 背景 */
+/* CSS 背景属性用于定义元素的背景效果。 */
+
+CSS background-color
+/* background-color 属性指定元素的背景色。 */
+
+/* 实例 */
+/* 页面的背景色设置如下： */
+body {
+  background-color: lightblue;
+}
+/* 通过 CSS，颜色通常由以下方式指定： */
+/* 有效的颜色名称 - 比如 "red" */
+/* 十六进制值 - 比如 "#ff0000" */
+/* RGB 值 - 比如 "rgb(255,0,0)" */
+
+/* 不透明度 / 透明度 */
+/* opacity 属性指定元素的不透明度/透明度。取值范围为 0.0 - 1.0。值越低，越透明： */
+/* 实例 */
+div {
+  background-color: green;
+  opacity: 0.3;
+}
+/* 注意：使用 opacity 属性为元素的背景添加透明度时，其所有子元素都继承相同的透明度。这可能会使完全透明的元素内的文本难以阅读。 */
+
+/* 使用 RGBA 的透明度 */
+/* 如果您不希望对子元素应用不透明度，例如上面的例子，请使用 RGBA 颜色值。下面的例子设置背景色而不是文本的不透明度： */
+/* 您从我们的 CSS 颜色 章节中学到了可以将 RGB 用作颜色值。除 RGB 外，还可以将 RGB 颜色值与 alpha 通道一起使用（RGBA） - 该通道指定颜色的不透明度。 */
+/* RGBA 颜色值指定为：rgba(red, green, blue, alpha)。alpha 参数是介于 0.0（完全透明）和 1.0（完全不透明）之间的数字。 */
+/* 实例 */
+div {
+  background: rgba(0, 128, 0, 0.3) /* 30% 不透明度的绿色背景 */
+}
+
+/* CSS 背景图像 */
+/* background-image 属性指定用作元素背景的图像。 */
+/* 默认情况下，图像会重复，以覆盖整个元素。 */
+/* 实例 */
+/* 页面的背景图像可以像这样设置： */
+body {
+  background-image: url("paper.gif");
+}
+
+/* CSS 背景重复 */
+/* CSS background-repeat */
+/* 默认情况下，background-image 属性在水平和垂直方向上都重复图像。 */
+/* 某些图像应只适合水平或垂直方向上重复，否则它们看起来会很奇怪，如下所示： */
+/* 实例 */
+body {
+  background-image: url("gradient_bg.png");
+}
+/* 如果上面的图像仅在水平方向重复 (background-repeat: repeat-x;)，则背景看起来会更好： */
+/* 实例 */
+body {
+  background-image: url("gradient_bg.png");
+  background-repeat: repeat-x;
+}
+/* 提示：如需垂直重复图像，请设置 background-repeat: repeat-y; */
+
+/* CSS background-repeat: no-repeat */
+/* background-repeat 属性还可指定只显示一次背景图像： */
+/* 实例 */
+/* 背景图像仅显示一次： */
+body {
+  background-image: url("tree.png");
+  background-repeat: no-repeat;
+}
+
+/* CSS background-position */
+/* background-position 属性用于指定背景图像的位置。 */
+/* 实例 */
+/* 把背景图片放在右上角： */
+body {
+  background-image: url("tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+
+/* CSS 背景附着 */
+/* CSS background-attachment */
+/* background-attachment 属性指定背景图像是应该滚动还是固定的（不会随页面的其余部分一起滚动）： */
+/* 实例 */
+/* 指定应该固定背景图像： */
+body {
+  background-image: url("tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+/* 实例 */
+/* 指定背景图像应随页面的其余部分一起滚动： */
+body {
+  background-image: url("tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: scroll;
+}
+
+
+/* CSS 背景简写 */
+/* CSS background - 简写属性 */
+/* 如需缩短代码，也可以在一个属性中指定所有背景属性。它被称为简写属性。 */
+/* 而不是这样写： */
+body {
+  background-color: #ffffff;
+  background-image: url("tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+/* 您能够使用简写属性 background： */
+/* 实例 */
+/* 使用简写属性在一条声明中设置背景属性： */
+body {
+  background: #ffffff url("tree.png") no-repeat right top;
+}
+/* 在使用简写属性时，属性值的顺序为： */
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+/* 属性值之一缺失并不要紧，只要按照此顺序设置其他值即可。请注意，在上面的例子中，我们没有使用 background-attachment 属性，因为它没有值。 */
+
+/* 所有 CSS 背景属性 */
+/* 属性	描述 */
+/* background	在一条声明中设置所有背景属性的简写属性。 */
+background-attachment	设置背景图像是固定的还是与页面的其余部分一起滚动。
+background-clip	规定背景的绘制区域。
+background-color	设置元素的背景色。
+background-image	设置元素的背景图像。
+background-origin	规定在何处放置背景图像。
+background-position	设置背景图像的开始位置。
+background-repeat	设置背景图像是否及如何重复。
+background-size	规定背景图像的尺寸。
+
+
+/* CSS background-clip 属性 */
+/* 实例 */
+/* 规定背景的绘制区域： */
+div{
+background-color:yellow;
+background-clip:content-box;
+}
+/* 语法 */
+/* background-clip: border-box|padding-box|content-box; */
+/* 值	    描述	 */
+border-box	背景被裁剪到边框盒。	
+padding-box	背景被裁剪到内边距框。	
+content-box	背景被裁剪到内容框。	
+
+/* CSS background-origin 属性 */
+/* 实例 */
+/* 相对于内容框来定位背景图像： */
+div{
+background-image:url('smiley.gif');
+background-repeat:no-repeat;
+background-position:left;
+background-origin:content-box;
+}
+/* 定义和用法 */
+/* background-origin 属性规定 background-position 属性相对于什么位置来定位。 */
+/* 注释：如果背景图像的 background-attachment 属性为 "fixed"，则该属性没有效果。 */
+/* 语法 */
+/* background-origin: padding-box|border-box|content-box; */
+/* 值	    描述	 */
+padding-box	背景图像相对于内边距框来定位。	
+border-box	背景图像相对于边框盒来定位。	
+content-box	背景图像相对于内容框来定位。
+
+/* CSS background-size 属性 */
+/* 实例 */
+/* 规定背景图像的尺寸： */
+div{
+background:url(img_flwr.gif);
+background-size:80px 60px;
+background-repeat:no-repeat;
+}
+/* 语法 */
+/* background-size: length|percentage|cover|contain; */
+/* 值	            描述	 */
+/* length	 */
+                /* 设置背景图像的高度和宽度。 */
+                /* 第一个值设置宽度，第二个值设置高度。 */
+                /* 如果只设置一个值，则第二个值会被设置为 "auto"。 */
+
+/* percentage	 */
+                /* 以父元素的百分比来设置背景图像的宽度和高度。 */
+                /* 第一个值设置宽度，第二个值设置高度。 */
+                /* 如果只设置一个值，则第二个值会被设置为 "auto"。 */
+/* cover	 */
+                /* 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。 */
+                /* 背景图像的某些部分也许无法显示在背景定位区域中。 */
+
+/* contain	    把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。	 */
+
+
+
+
+
+/* CSS 多重背景 */
+/* CSS 允许您通过 background-image 属性为一个元素添加多幅背景图像。 */
+/* 不同的背景图像用逗号隔开，并且图像会彼此堆叠，其中的第一幅图像最靠近观看者。 */
+/* 下面的例子有两幅背景图像，第一幅图像是花朵（与底部和右侧对齐），第二幅图像是纸张背景（与左上角对齐）： */
+/* 实例 */
+#example1 {
+  background-image: url(flower.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+}
+
+/* 多重背景图像可以使用单独的背景属性（如上所述）或 background 简写属性来指定。 */
+/* 下面的例子使用 background 简写属性（结果与上例相同）： */
+/* 实例 */
+#example1 {
+  background: url(flower.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+}
+
+
+/* CSS 背景尺寸 */
+/* CSS background-size 属性允许您指定背景图像的大小。 */
+/* 可以通过长度、百分比或使用以下两个关键字之一来指定背景图像的大小：contain 或 cover。 */
+/* 下面的例子将背景图像的大小调整为比原始图像小得多（使用像素）： */
+/* 这是代码： */
+/* 实例 */
+#div1 {
+  background: url(img_flower.jpg);
+  background-size: 100px 80px;
+  background-repeat: no-repeat;
+}
+/* background-size 的其他两个可能的值是 contain 和 cover。 */
+/* contain 关键字将背景图像缩放为尽可能大的尺寸（但其宽度和高度都必须适合内容区域）。这样，取决于背景图像和背景定位区域的比例，可能存在一些未被背景图像覆盖的背景区域。 */
+/* cover 关键字会缩放背景图像，以使内容区域完全被背景图像覆盖（其宽度和高度均等于或超过内容区域）。这样，背景图像的某些部分可能在背景定位区域中不可见。 */
+/* 下面的例子展示了 contain 和 cover 的用法： */
+/* 实例 */
+#div1 {
+  background: url(img_flower.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#div2 {
+  background: url(img_flower.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* 定义多个背景图像的尺寸 */
+/* 在处理多重背景时，background-size 属性还可以接受多个设置背景尺寸的值（使用逗号分隔的列表）。 */
+/* 下面的例子指定了三幅背景图像，每幅图像有不同的 background-size 值： */
+/* 实例 */
+#example1 {
+  background: url(tree.png) left top no-repeat, url(flower.gif) right bottom no-repeat, 
+  	url(paper.gif) left top repeat;
+  background-size: 50px, 130px, auto;
+}
+
+
+/* 全尺寸背景图像 */
+/* 现在，我们希望网站上的背景图像始终覆盖整个浏览器窗口。 */
+
+/* 具体要求如下： */
+
+/* 用图像填充整个页面（无空白） */
+/* 根据需要缩放图像 */
+/* 在页面上居中图像 */
+/* 不引发滚动条 */
+/* 下面的例子显示了如何实现它：使用 <html> 元素（<html> 元素始终至少是浏览器窗口的高度）。然后在其上设置固定且居中的背景。最后使用 background-size 属性调整其大小： */
+
+/* 实例 */
+html {
+  background: url(img_man.jpg) no-repeat center fixed; 
+  background-size: cover;
+}
+
+
+/* CSS background-origin 属性 */
+/* CSS background-origin 属性指定背景图像的位置。 */
+
+/* 该属性接受三个不同的值： */
+
+/* border-box - 背景图片从边框的左上角开始 */
+/* padding-box -背景图像从内边距边缘的左上角开始（默认） */
+/* content-box - 背景图片从内容的左上角开始 */
+/* 下面的示例展示了 background-origin 属性： */
+
+/* 实例 */
+#example1 {
+  border: 10px solid black;
+  padding: 35px;
+  background: url(flower.gif);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+
+
+/* CSS background-clip 属性 */
+/* CSS background-clip 属性指定背景的绘制区域。 */
+
+/* 该属性接受三个不同的值： */
+
+/* border-box - 背景绘制到边框的外部边缘（默认） */
+/* padding-box - 背景绘制到内边距的外边缘 */
+/* content-box - 在内容框中绘制背景 */
+/* 下面的例子展示了 background-clip 属性： */
+
+/* 实例 */
+#example1 {
+  border: 10px dotted black;
+  padding: 35px;
+  background: yellow;
+  background-clip: content-box;
+}
+
+
+
+
+

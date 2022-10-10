@@ -1,0 +1,36 @@
+Electron-vue 运行和打包过程中踩过的坑
+
+安装官方模板后
+运行：npm run dev 
+报错 .electron-vue/build.js中重复申明了task
+const tasks = ['main', 'renderer']
+  const m = new Multispinner(tasks, {
+    preText: 'building',
+    postText: 'process'
+  })
+改为
+const tasks1 = ['main', 'renderer']
+ const m = new Multispinner(tasks1, {
+   preText: 'building',
+   postText: 'process'
+ })
+
+
+打包 npm run build
+参考：https://www.cnblogs.com/phoebeyue/p/12741170.html
+打包过程中
+由于网络问题下载文件太慢中断报错
+主要有以下几个文件
+electron-V.xxxx.zip   tmp-15460-0-electron-v1.8.8-win32-x64.zip
+nsis-resources-xxx
+winCodeSign-1.9.0.7z
+nsis-3.0.1.13.7z
+可以先去手动下载文件，然后放到对应的缓存文件夹中
+window10的缓存文件夹一般为：C:\Users\Administrator\AppData\Local\electron\Cache      
+C:\Users\Administrator\AppData\Local\electron-builder\cache
+一般报错的提示中就有缓存位置和下载链接，去对应的地方下载安装就行了 
+
+
+
+
+

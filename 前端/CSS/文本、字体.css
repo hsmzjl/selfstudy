@@ -1,0 +1,328 @@
+/* https://www.w3school.com.cn/css/css_text.asp */
+
+/* CSS 文本 */
+
+/* 文本颜色 */
+/* color 属性用于设置文本的颜色。颜色由以下值指定： */
+/* 颜色名 - 比如 "red" */
+/* 十六进制值 - 比如 "#ff0000" */
+/* RGB 值 - 比如 "rgb(255,0,0)" */
+/* 查看 CSS 颜色值，以获取可能颜色值的完整列表。 */
+/* 页面的默认文本颜色是在 body 选择器中定义的。 */
+/* 实例 */
+body {
+  color: blue;
+}
+h1 {
+  color: green;
+}
+
+/* 文本对齐 */
+/* text-align 属性用于设置文本的水平对齐方式。 */
+/* 文本可以左对齐或右对齐，或居中对齐。 */
+/* 下例展示了居中对齐以及左右对齐的文本（如果文本方向是从左到右，则默认为左对齐；如果文本方向是从右到左，则默认是右对齐）： */
+/* 实例 */
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}
+/* 当 text-align 属性设置为 "justify" 后，将拉伸每一行，以使每一行具有相等的宽度，并且左右边距是直的（就像在杂志和报纸中）： */
+/* 实例 */
+div {
+  text-align: justify;
+}
+
+/* 文本方向 */
+/* direction 和 unicode-bidi 属性可用于更改元素的文本方向： */
+/* 实例 */
+p {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+/* 垂直对齐 */
+/* vertical-align 属性设置元素的垂直对齐方式。 */
+/* 本例演示如何设置文本中图像的垂直对齐方式： */
+/* 实例 */
+img.top {
+  vertical-align: top;
+}
+
+img.middle {
+  vertical-align: middle;
+}
+
+img.bottom {
+  vertical-align: bottom;
+}
+
+/* 文字装饰 */
+/* text-decoration 属性用于设置或删除文本装饰。 */
+/* text-decoration: none; 通常用于从链接上删除下划线： */
+/* 实例 */
+a {
+  text-decoration: none;
+}
+/* 其他 text-decoration 值用于装饰文本： */
+/* 实例 */
+h1 {
+  text-decoration: overline;
+}
+
+h2 {
+  text-decoration: line-through;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+/* 文本转换 */
+/* text-transform 属性用于指定文本中的大写和小写字母。 */
+/* 它可用于将所有内容转换为大写或小写字母，或将每个单词的首字母大写： */
+/* 实例 */
+p.uppercase {
+  text-transform: uppercase;
+}
+
+p.lowercase {
+  text-transform: lowercase;
+}
+
+p.capitalize {
+  text-transform: capitalize;
+}
+
+/* 文字缩进 */
+/* text-indent 属性用于指定文本第一行的缩进： */
+/* 实例 */
+p {
+  text-indent: 50px;
+}
+
+/* 字母间距 */
+/* letter-spacing 属性用于指定文本中字符之间的间距。 */
+/* 下例演示如何增加或减少字符之间的间距： */
+/* 实例 */
+h1 {
+  letter-spacing: 3px;
+}
+h2 {
+  letter-spacing: -3px;
+}
+
+/* 行高 */
+/* line-height 属性用于指定行之间的间距： */
+/* 实例 */
+p.small {
+  line-height: 0.8;
+}
+p.big {
+  line-height: 1.8;
+}
+
+/* 字间距 */
+/* word-spacing 属性用于指定文本中单词之间的间距。 */
+/* 下例演示如何增加或减少单词之间的间距： */
+/* 实例 */
+h1 {
+  word-spacing: 10px;
+}
+h2 {
+  word-spacing: -5px;
+}
+
+/* 空白 */
+/* white-space 属性指定元素内部空白的处理方式。 */
+/* 此例演示如何禁用元素内的文本换行： */
+/* 实例 */
+p {
+  white-space: nowrap;
+}
+
+/* 文本阴影 */
+/* text-shadow 属性为文本添加阴影。 */
+
+/* 最简单的用法是只指定水平阴影（2px）和垂直阴影（2px）： */
+/* 文字阴影效果！ */
+/* 实例 */
+h1 {
+  text-shadow: 2px 2px;
+}
+
+/* 接下来，向阴影添加颜色（红色）： */
+/* 文字阴影效果！ */
+/* 实例 */
+h1 {
+  text-shadow: 2px 2px red;
+}
+
+/* 然后，向阴影添加模糊效果（5px）： */
+/* 文字阴影效果！ */
+/* 实例 */
+h1 {
+  text-shadow: 2px 2px 5px red;
+}
+
+
+
+/* 字体 */
+
+/* CSS font-family 属性 */
+/* 在 CSS 中，我们使用 font-family 属性规定文本的字体。 */
+/* font-family 属性应包含多个字体名称作为“后备”系统，以确保浏览器/操作系统之间的最大兼容性。请以您需要的字体开始，并以通用系列结束（如果没有其他可用字体，则让浏览器选择通用系列中的相似字体）。字体名称应以逗号分隔。 */
+/* 注释：如果字体名称不止一个单词，则必须用引号引起来，例如："Times New Roman"。 */
+/* 实例 */
+/* 为三个段落规定不同的字体： */
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+/* 字体样式 */
+/* font-style 属性主要用于指定斜体文本。 */
+/* 此属性可设置三个值： */
+/* normal - 文字正常显示 */
+/* italic - 文本以斜体显示 */
+/* oblique - 文本为“倾斜”（倾斜与斜体非常相似，但支持较少） */
+/* 实例 */
+p.normal {
+  font-style: normal;
+}
+p.italic {
+  font-style: italic;
+}
+p.oblique {
+  font-style: oblique;
+}
+
+/* 字体粗细 */
+/* font-weight 属性指定字体的粗细： */
+/* 实例 */
+p.normal {
+  font-weight: normal;
+}
+p.thick {
+  font-weight: bold;
+}
+
+/* 字体变体 */
+/* font-variant 属性指定是否以 small-caps 字体（小型大写字母）显示文本。 */
+/* 在 small-caps 字体中，所有小写字母都将转换为大写字母。但是，转换后的大写字母的字体大小小于文本中原始大写字母的字体大小。 */
+/* 实例 */
+p.normal {
+  font-variant: normal;
+}
+p.small {
+  font-variant: small-caps;
+}
+
+/* 字体大小 */
+/* font-size 属性设置文本的大小。 */
+/* 在网页设计中，能够管理文本大小很重要。但是，不应使用调整字体大小来使段落看起来像标题，或是使标题看起来像段落。 */
+/* 请始终使用正确的 HTML 标签，例如 <h1> - <h6> 用于标题，而 <p> 仅用于段落。 */
+/* font-size 值可以是绝对或相对大小。 */
+/* 绝对尺寸： */
+/* 将文本设置为指定大小 */
+/* 不允许用户在所有浏览器中更改文本大小（可访问性不佳） */
+/* 当输出的物理尺寸已知时，绝对尺寸很有用 */
+/* 相对尺寸： */
+/* 设置相对于周围元素的大小 */
+/* 允许用户在浏览器中更改文本大小 */
+/* 注释：如果您没有指定字体大小，则普通文本（如段落）的默认大小为 16px（16px = 1em）。 */
+/* 以像素设置字体大小 */
+/* 使用像素设置文本大小可以完全控制文本大小： */
+/* 实例 */
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+p {
+  font-size: 14px;
+}
+/* 用 em 设置字体大小 */
+/* 为了允许用户调整文本大小（在浏览器菜单中），许多开发人员使用 em 而不是像素。 */
+/* W3C 建议使用 em 尺寸单位。 */
+/* 1em 等于当前字体大小。浏览器中的默认文本大小为 16px。因此，默认大小 1em 为 16px。 */
+/* 可以使用这个公式从像素到 em 来计算大小：pixels/16=em。 */
+/* 实例 */
+h1 {
+  font-size: 2.5em; /* 40px/16=2.5em */
+}
+h2 {
+  font-size: 1.875em; /* 30px/16=1.875em */
+}
+p {
+  font-size: 0.875em; /* 14px/16=0.875em */
+}
+/* 在上例中，em 单位的文本大小与上一个例子中的像素大小相同。但是，若使用 em 尺寸，则可以在所有浏览器中调整文本大小。 */
+/* 不幸的是，旧版本的 Internet Explorer 仍然存在问题。放大文本时它比应该大的尺寸更大，缩小文本时会更小。 */
+/* 使用百分比和 Em 的组合 */
+/* 实例 */
+body {
+  font-size: 100%;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 1.875em;
+}
+p {
+  font-size: 0.875em;
+}
+/* 我们的代码目前运行良好！它在所有浏览器中显示相同的文本大小，并允许所有浏览器缩放或调整文本大小！ */
+/* 响应式字体大小 */
+/* 可以使用 vw 单位设置文本大小，它的意思是“视口宽度”（"viewport width"）。 */
+/* 这样，文本大小将遵循浏览器窗口的大小，请调整浏览器窗口的大小，以查看字体大小如何缩放： */
+
+/* 实例 */
+/* <h1 style="font-size:10vw">Hello World</h1> */
+/* 视口（Viewport）是浏览器窗口的大小。 1vw = 视口宽度的 1％。如果视口为 50 厘米宽，则 1vw 为 0.5 厘米。 */
+
+
+/* 字体属性 */
+/* 为了缩短代码，也可以在一个属性中指定所有单个字体属性。 */
+/* font 属性是以下属性的简写属性： */
+font-style
+font-variant
+font-weight
+font-size/line-height
+font-family
+/* 实例 */
+/* 使用简写声明设置一些字体属性： */
+p.a {
+  font: 20px Arial, sans-serif;
+}
+p.b {
+  font: italic small-caps bold 12px/30px Georgia, serif;
+}
+/* 注意：font-size 和 font-family 的值是必需的。如果缺少其他值之一，则会使用其默认值。 */
+
+/* 所有 CSS 字体属性 */
+/* 属性	         描述 */
+/* font	        简写属性。在一条声明中设置所有字体属性。 */
+/* font-family	规定文本的字体系列（字体族）。 */
+/* font-size	规定文本的字体大小。 */
+/* font-style	规定文本的字体样式。 */
+/* font-variant	规定是否以小型大写字母的字体显示文本。 */
+/* font-weight	规定字体的粗细。 */
+
+
+
+
+

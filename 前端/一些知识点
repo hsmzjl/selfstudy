@@ -1,0 +1,9 @@
+/* CSS 隐藏滚动条，但是能滚动  */
+.MenuPage {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+.MenuPage::-webkit-scrollbar {
+  display: none;
+}

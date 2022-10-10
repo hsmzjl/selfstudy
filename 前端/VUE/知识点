@@ -1,0 +1,12 @@
+// 深度监听
+data:{
+    obj:{
+      a:1
+    }
+},
+watch:{
+    'obj.a'(val,oldval){
+        console.log(val,oldval)  //这样可以监听到a的变化
+    }
+}
+也可以添加：deep:true //为true，表示深度监听，这时候就能监测到a值变化

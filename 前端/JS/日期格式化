@@ -1,0 +1,6 @@
+// 获取AddDayCount天后的日期格式化文本
+getdatestr(AddDayCount) {
+    let date = new Date();
+    date.setDate(date.getDate() + AddDayCount);//获取AddDayCount天后的日期
+    return date.getFullYear().toString() + "-" + (date.getMonth() + 1).toString() + "-" + date.getDate().toString();
+},

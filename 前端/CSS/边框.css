@@ -1,0 +1,278 @@
+/* https://www.w3school.com.cn/css/css_border.asp */
+
+/* CSS 边框 */
+/* CSS 边框属性 */
+/* CSS border 属性允许您指定元素边框的样式、宽度和颜色。 */
+
+/* CSS 边框样式 */
+/* border-style 属性指定要显示的边框类型。 */
+/* 允许以下值： */
+/* dotted - 定义点线边框 */
+/* dashed - 定义虚线边框 */
+/* solid - 定义实线边框 */
+/* double - 定义双边框 */
+/* groove - 定义 3D 坡口边框。效果取决于 border-color 值 */
+/* ridge - 定义 3D 脊线边框。效果取决于 border-color 值 */
+/* inset - 定义 3D inset 边框。效果取决于 border-color 值 */
+/* outset - 定义 3D outset 边框。效果取决于 border-color 值 */
+/* none - 定义无边框 */
+/* hidden - 定义隐藏边框 */
+/* border-style 属性可以设置一到四个值（用于上边框、右边框、下边框和左边框）。 */
+/* 实例 */
+/* 演示不同的边框样式： */
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+
+/* CSS 边框宽度 */
+/* border-width 属性指定四个边框的宽度。 */
+/* 可以将宽度设置为特定大小（以 px、pt、cm、em 计），也可以使用以下三个预定义值之一：thin、medium 或 thick： */
+/* 实例 */
+/* 演示不同的边框宽度： */
+p.one {
+  border-style: solid;
+  border-width: 5px;
+}
+p.two {
+  border-style: solid;
+  border-width: medium;
+}
+p.three {
+  border-style: dotted;
+  border-width: 2px;
+} 
+p.four {
+  border-style: dotted;
+  border-width: thick;
+}
+
+/* 特定边的宽度 */
+/* border-width 属性可以设置一到四个值（用于上边框、右边框、下边框和左边框）： */
+/* 实例 */
+p.one {
+  border-style: solid;
+  border-width: 5px 20px; /* 上边框和下边框为 5px，其他边为 20px */
+}
+p.two {
+  border-style: solid;
+  border-width: 20px 5px; /* 上边框和下边框为 20px，其他边为 5px */
+}
+p.three {
+  border-style: solid;
+  border-width: 25px 10px 4px 35px; /* 上边框 25px，右边框 10px，下边框 4px，左边框 35px */
+}
+
+/* CSS 边框颜色 */
+/* border-color 属性用于设置四个边框的颜色。 */
+/* 可以通过以下方式设置颜色： */
+/* name - 指定颜色名，比如 "red" */
+/* HEX - 指定十六进制值，比如 "#ff0000" */
+/* RGB - 指定 RGB 值，比如 "rgb(255,0,0)" */
+/* HSL - 指定 HSL 值，比如 "hsl(0, 100%, 50%)" */
+/* transparent */
+/* 注释：如果未设置 border-color，则它将继承元素的颜色。 */
+/* 实例 */
+/* 演示不同的边框颜色： */
+p.one {
+  border-style: solid;
+  border-color: red;
+}
+p.two {
+  border-style: solid;
+  border-color: green;
+}
+p.three {
+  border-style: dotted;
+  border-color: blue;
+}
+/* 注释：border-color 属性单独使用时不起作用。请首先使用 border-style 属性设置样式。 */
+
+/* CSS 边框 - 单独的边 */
+/* 从上一章的例子中，您已经看到可以为每一侧指定不同的边框。 */
+/* 在 CSS 中，还有一些属性可用于指定每个边框（顶部、右侧、底部和左侧）： */
+/* 实例 */
+p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+/* 不同的边框样式 */
+/* 上例的结果与此相同： */
+/* 实例 */
+p {
+  border-style: dotted solid;
+}
+/* 它的工作原理是这样的： */
+/* 如果 border-style 属性设置四个值： */
+/* border-style: dotted solid double dashed; */
+/* 上边框是虚线 */
+/* 右边框是实线 */
+/* 下边框是双线 */
+/* 左边框是虚线 */
+
+/* 如果 border-style 属性设置三个值： */
+/* border-style: dotted solid double; */
+/* 上边框是虚线 */
+/* 右和左边框是实线 */
+/* 下边框是双线 */
+
+/* 如果 border-style 属性设置两个值： */
+/* border-style: dotted solid; */
+/* 上和下边框是虚线 */
+/* 右和左边框是实线 */
+
+/* 如果 border-style 属性设置一个值： */
+/* border-style: dotted; */
+/* 四条边均为虚线 */
+/* 实例 */
+/* 四个值 */
+p {
+  border-style: dotted solid double dashed; 
+}
+/* 三个值 */
+p {
+  border-style: dotted solid double; 
+}
+/* 两个值 */
+p {
+  border-style: dotted solid; 
+}
+/* 一个值 */
+p {
+  border-style: dotted; 
+}
+
+
+/* CSS Border - 简写属性 */
+/* 就像您在上一章中所见，处理边框时要考虑许多属性。 */
+/* 为了缩减代码，也可以在一个属性中指定所有单独的边框属性。 */
+/* border 属性是以下各个边框属性的简写属性： */
+/* border-width */
+/* border-style（必需） */
+/* border-color */
+/* 实例 */
+p {
+  border: 5px solid red;
+}
+/* 您还可以只为一个边指定所有单个边框属性： */
+/* 左边框 */
+p {
+  border-left: 6px solid red;
+  background-color: lightgrey;
+}
+
+/* CSS 圆角边框 */
+/* border-radius 属性用于向元素添加圆角边框： */
+/* 实例 */
+p {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+
+
+/* https://www.w3school.com.cn/css/css3_borders.asp */
+/* CSS 圆角 */
+
+/* CSS border-radius 属性 */
+/* CSS border-radius - 指定每个角 */
+/* border-radius 属性可以接受一到四个值。规则如下： */
+/* 四个值 - border-radius: 15px 50px 30px 5px;（依次分别用于：左上角、右上角、右下角、左下角）： */
+/* 三个值 - border-radius: 15px 50px 30px;（第一个值用于左上角，第二个值用于右上角和左下角，第三个用于右下角）： */
+/* 两个值 - border-radius: 15px 50px;（第一个值用于左上角和右下角，第二个值用于右上角和左下角）： */
+/* 一个值 - border-radius: 15px;（该值用于所有四个角，圆角都是一样的）： */
+
+/* 提示：border-radius 属性实际上是以下属性的简写属性： */
+/* border-top-left-radius */
+/* border-top-right-radius */
+/* border-bottom-right-radius */
+/* border-bottom-left-radius */
+
+/* 还可以创建椭圆角： */
+/* 实例 */
+#rcorners1 {
+  border-radius: 50px / 15px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+#rcorners2 {
+  border-radius: 15px / 50px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+#rcorners3 {
+  border-radius: 50%;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;
+}
+
+
+
+
+/* CSS 边框图像 */
+/* CSS border-image 属性 */
+/* CSS border-image 属性允许您指定要使用的图像，而不是包围普通边框。 */
+/* 该属性有三部分： */
+/* 用作边框的图像 */
+/* 在哪里裁切图像 */
+/* 定义中间部分应重复还是拉伸 */
+/* border-image 属性接受图像，并将其切成九部分，就像井字游戏板。然后，将拐角放置在拐角处，并根据您的设置重复或拉伸中间部分。 */
+/* 注意：为了使 border-image 起作用，该元素还需要设置 border 属性！ */
+/* 这是代码： */
+/* 实例 */
+#borderimg {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 round;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+https://blog.csdn.net/jiaojinlin/article/details/104061679
+
+electron中有dialog模块，可以用来打来文件框，选择文件夹或者文件。
+
+两种实现方式
+
+1、可以通过ipc通信，main process，实现打开文件对话框的操作，然后把选择的文件夹或者文件再次通过ipc通信发送的render 进程。
+// in render.js
+const {ipcRenderer} = require('electron');
+function openDialog(){
+    ipcRenderer.send('openDialog');
+}
+ipcRenderer.on('selectedItem', (event, files)=>{
+ 
+    console.log(files);//输出选择的文件
+})
+ 
+//in main.js
+const {ipcRenderer, dialog} = require('electron');
+ipcRenderer.on('openDialog',(event)=>{
+    dialog.showOpenDialog({
+        
+    }).then(result=>{
+        console.log(result);        //输出结果
+        result.filePaths.length>0 && ipcRenderer.send(result.filePaths);
+    })
+})
+2、直接在render进程中，使用remote模块中的dialog模块，打开。
+const { remote } = require('electron');
+async function openDialog(){
+    const result = await remote.dialog.showOpenDialog({
+        properties: ['openFile'],
+    });
+}
+
+; 示例
+const { remote } = require('electron');
+async onSubmit() {
+    const result = await remote.dialog.showOpenDialog({
+    title: "我的标题",
+    defaultPath: "D:\\workdir\\笔记与存档\\前端\\CSS", //默认路径
+    properties: ['openFile'], //选择文件   参数 openDirectory 允许选择目录 参数 multiSelections 允许多选
+    filters: [
+        { name: 'Excel', extensions: ['xls', 'xlsx'] },
+        { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
+        { name: 'Movies', extensions: ['mkv', 'avi', 'mp4'] },
+        { name: 'Custom File Type', extensions: ['as'] },
+        { name: 'All Files', extensions: ['*'] }
+    ]
+    });
+    console.log(result)
+}

@@ -1,0 +1,12 @@
+/*元素选择器*/
+p{
+    margin: 0;
+} 
+/*ID选择器*/
+.myid{
+    margin: 0;
+}
+/*类选择器*/
+.myclass{
+    margin: 0;
+}
